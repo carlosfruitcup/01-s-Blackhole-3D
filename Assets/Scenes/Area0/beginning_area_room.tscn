@@ -1,0 +1,621 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Music/combat/combat_general_1.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Assets/textures/tile/a0_4.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Scenes/Area0/crack.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Tileset/.tres" type="MeshLibrary" id=5]
+[ext_resource path="res://Assets/Music/AreaBG/0/0background.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/textures/skybox/crack.png" type="Texture" id=7]
+[ext_resource path="res://Assets/textures/skybox/fog.png" type="Texture" id=8]
+[ext_resource path="res://Assets/textures/tutorial/tutorial_controls.png" type="Texture" id=9]
+[ext_resource path="res://Assets/textures/tutorial/tutorial_controls_spacebar.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Scenes/essentials/visibility_check.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Scenes/Area0/rotation_fog.gd" type="Script" id=12]
+[ext_resource path="res://Assets/textures/water/a0_dirty_water.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Scenes/essentials/water.gd" type="Script" id=14]
+[ext_resource path="res://Assets/Scenes/Area0/beginning_area_room.gd" type="Script" id=15]
+[ext_resource path="res://Assets/Scenes/Area0/dialogue_triggers.gd" type="Script" id=16]
+[ext_resource path="res://Assets/Sound/amb_ocean.ogg" type="AudioStream" id=17]
+
+[sub_resource type="SpatialMaterial" id=15]
+flags_transparent = true
+albedo_color = Color( 1, 0, 0, 0.545098 )
+albedo_texture = ExtResource( 8 )
+uv1_scale = Vector3( 0.015, 0.015, 0.015 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=16]
+flags_transparent = true
+albedo_color = Color( 0.780392, 0.537255, 0.537255, 0.647059 )
+uv1_scale = Vector3( 0.015, 0.015, 0.015 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=22]
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id=11]
+material = SubResource( 22 )
+size = Vector2( 2, 8.014 )
+
+[sub_resource type="PlaneMesh" id=12]
+material = SubResource( 22 )
+size = Vector2( 3.985, 8.014 )
+
+[sub_resource type="PlaneMesh" id=13]
+material = SubResource( 22 )
+size = Vector2( 4.016, 8.014 )
+
+[sub_resource type="PlaneMesh" id=14]
+material = SubResource( 22 )
+size = Vector2( 4.113, 8.014 )
+
+[sub_resource type="ProceduralSky" id=28]
+sky_top_color = Color( 0.4, 0, 0, 1 )
+sky_horizon_color = Color( 0.4, 0, 0, 1 )
+sky_curve = 3.54569
+sky_energy = 0.27
+sun_color = Color( 0.4, 0, 0, 1 )
+sun_latitude = 60.0
+sun_longitude = 30.0
+sun_angle_max = 29.48
+sun_curve = 0.186607
+
+[sub_resource type="Environment" id=7]
+background_mode = 2
+background_sky = SubResource( 28 )
+background_energy = 0.27
+ambient_light_color = Color( 0.4, 0, 0, 1 )
+fog_enabled = true
+fog_color = Color( 0.4, 0, 0, 1 )
+fog_sun_color = Color( 0.4, 0, 0, 1 )
+fog_depth_begin = 0.0
+fog_depth_end = 43.5
+fog_height_enabled = true
+fog_height_max = 457.1
+fog_height_curve = 0.00153239
+tonemap_mode = 2
+ssao_quality = 0
+ssao_blur = 2
+glow_strength = 1.3
+glow_bloom = 0.08
+
+[sub_resource type="BoxShape" id=20]
+extents = Vector3( 29, 30, 3 )
+
+[sub_resource type="SpatialMaterial" id=26]
+flags_unshaded = true
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="Animation" id=23]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.001 ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "play"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.001, 58.3 ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 11.382, 0.97, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "play"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 11.382, 0.97, 1 ), Vector3( 11.382, 0.646, 1 ) ]
+}
+
+[sub_resource type="SpatialMaterial" id=27]
+albedo_texture = ExtResource( 13 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_offset = Vector3( 0.826, 0, -2.545 )
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id=18]
+material = SubResource( 27 )
+size = Vector2( 700, 700 )
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 1, 8, 12 )
+
+[sub_resource type="SphereShape" id=19]
+radius = 5.0
+
+[node name="Spatial" type="Spatial" groups=["world"]]
+script = ExtResource( 15 )
+
+[node name="floor" type="GridMap" parent="."]
+mesh_library = ExtResource( 5 )
+cell_size = Vector3( 2, 1, 2 )
+data = {
+"cells": PoolIntArray( 65523, 0, 1114114, 65524, 0, 1114116, 65525, 0, 1114116, 65526, 0, 1114116, 65527, 0, 1114116, 65528, 0, 1114116, 65529, 0, 1114116, 65530, 0, 1114116, 65531, 0, 786435, 65523, 1, 1114114, 65524, 1, 1114116, 65525, 1, 1114116, 65526, 1, 1114116, 65527, 1, 1114116, 65528, 1, 1114116, 65529, 1, 1114116, 65530, 1, 1114116, 65531, 1, 786435, 65523, 2, 1114114, 65524, 2, 1114116, 65525, 2, 1114116, 65526, 2, 1114116, 65527, 2, 1114116, 65528, 2, 1114116, 65529, 2, 1114116, 65530, 2, 1114116, 65531, 2, 786435, 65523, 3, 1114114, 65524, 3, 1114116, 65525, 3, 1114116, 65526, 3, 1114116, 65527, 3, 1114116, 65528, 3, 1114116, 65529, 3, 1114116, 65530, 3, 1114116, 65531, 3, 786435, 65523, 4, 1114113, 65524, 4, 1114116, 65525, 4, 1114116, 65526, 4, 1114116, 65527, 4, 1114116, 65528, 4, 1114116, 65529, 4, 1114116, 65530, 4, 1114116, 65531, 4, 393217, 65529, 65503, 1114114, 65530, 65503, 1376258, 65529, 65511, 1114114, 65530, 65517, 1376258, 65527, 65520, 1114114, 65533, 65522, 1376258, 65529, 65524, 1114114, 65530, 65524, 1376258, 65529, 65525, 1114114, 65530, 65525, 1376258, 65529, 65526, 1114114, 65530, 65526, 1376258, 65528, 65527, 786433, 65529, 65527, 1114116, 65530, 65527, 1114116, 65531, 65527, 1376257, 65523, 65528, 786433, 65524, 65528, 786434, 65525, 65528, 786434, 65526, 65528, 786434, 65527, 65528, 786434, 65528, 65528, 786436, 65529, 65528, 786436, 65530, 65528, 786436, 65531, 65528, 786435, 65523, 65529, 1114114, 65524, 65529, 1114116, 65525, 65529, 1114116, 65526, 65529, 1114116, 65527, 65529, 1114116, 65528, 65529, 1114116, 65529, 65529, 1114116, 65530, 65529, 1114116, 65531, 65529, 786435, 65523, 65530, 1114114, 65524, 65530, 1114116, 65525, 65530, 1114116, 65526, 65530, 1114116, 65527, 65530, 1114116, 65528, 65530, 1114116, 65529, 65530, 1114116, 65530, 65530, 1114116, 65531, 65530, 786435, 65505, 65531, 1114116, 65511, 65531, 1114115, 65523, 65531, 1114114, 65524, 65531, 1114116, 65525, 65531, 1114116, 65526, 65531, 1114116, 65527, 65531, 1114116, 65528, 65531, 1114116, 65529, 65531, 1114116, 65530, 65531, 1114116, 65531, 65531, 786435, 0, 65532, 786434, 1, 65532, 786434, 2, 65532, 1376257, 65523, 65532, 1114114, 65524, 65532, 1114116, 65525, 65532, 1114116, 65526, 65532, 1114116, 65527, 65532, 1114116, 65528, 65532, 1114116, 65529, 65532, 1114116, 65530, 65532, 1114116, 65531, 65532, 1114116, 65532, 65532, 1114115, 65533, 65532, 1114115, 65534, 65532, 1114115, 65535, 65532, 1114115, 0, 65533, 393220, 1, 65533, 393220, 2, 65533, 1376258, 65521, 65533, 786434, 65522, 65533, 786434, 65523, 65533, 1114116, 65524, 65533, 1114116, 65525, 65533, 1114116, 65526, 65533, 1114116, 65527, 65533, 1114116, 65528, 65533, 1114116, 65529, 65533, 1114116, 65530, 65533, 1114116, 65531, 65533, 1114116, 65532, 65533, 1114116, 65533, 65533, 1114116, 65534, 65533, 393220, 65535, 65533, 393220, 0, 65534, 393220, 1, 65534, 393220, 2, 65534, 1376258, 65515, 65534, 786436, 65520, 65534, 786436, 65521, 65534, 786436, 65522, 65534, 786436, 65523, 65534, 1114116, 65524, 65534, 1114116, 65525, 65534, 1114116, 65526, 65534, 1114116, 65527, 65534, 1114116, 65528, 65534, 1114116, 65529, 65534, 1114116, 65530, 65534, 1114116, 65531, 65534, 1114116, 65532, 65534, 1114116, 65533, 65534, 1114116, 65534, 65534, 393220, 65535, 65534, 393220, 0, 65535, 1376259, 1, 65535, 1376259, 2, 65535, 393217, 65511, 65535, 1376259, 65512, 65535, 1376259, 65519, 65535, 393218, 65520, 65535, 393218, 65521, 65535, 393218, 65522, 65535, 393218, 65523, 65535, 1114116, 65524, 65535, 1114116, 65525, 65535, 1114116, 65526, 65535, 1114116, 65527, 65535, 1114116, 65528, 65535, 1114116, 65529, 65535, 1114116, 65530, 65535, 1114116, 65531, 65535, 1114116, 65532, 65535, 1376259, 65533, 65535, 1376259, 65534, 65535, 1376259, 65535, 65535, 1376259 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="floor2" type="GridMap" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.167, -0.65, 0 )
+mesh_library = ExtResource( 5 )
+cell_size = Vector3( 2, 1, 2 )
+data = {
+"cells": PoolIntArray( 262148, 0, 393219, 262149, 0, 786436, 262150, 0, 786436, 262151, 0, 786436, 262152, 0, 786436, 262153, 0, 786436, 262154, 0, 786435, 262148, 1, 1114113, 262149, 1, 786436, 262150, 1, 786436, 262151, 1, 786436, 262152, 1, 786436, 262153, 1, 786436, 262154, 1, 786435, 262149, 2, 1114113, 262150, 2, 1376259, 262151, 2, 1376259, 262152, 2, 1376259, 262153, 2, 1376259, 262154, 2, 393217, 262149, 65529, 786433, 262150, 65529, 1114115, 262151, 65529, 1114115, 262152, 65529, 1114115, 262153, 65529, 1114115, 262154, 65529, 1376257, 262148, 65530, 786433, 262149, 65530, 786436, 262150, 65530, 786436, 262151, 65530, 786436, 262152, 65530, 786436, 262153, 65530, 786436, 262154, 65530, 786435, 262148, 65531, 1114114, 262149, 65531, 786436, 262150, 65531, 786436, 262151, 65531, 786436, 262152, 65531, 786436, 262153, 65531, 786436, 262154, 65531, 786435, 262147, 65532, 786433, 262148, 65532, 1114116, 262149, 65532, 786436, 262150, 65532, 786436, 262151, 65532, 786436, 262152, 65532, 786436, 262153, 65532, 786436, 262154, 65532, 786435, 262147, 65533, 1114114, 262148, 65533, 1376260, 262149, 65533, 1376260, 262150, 65533, 786436, 262151, 65533, 786436, 262152, 65533, 786436, 262153, 65533, 786436, 262154, 65533, 786435, 262147, 65534, 1114114, 262148, 65534, 1376260, 262149, 65534, 1376260, 262150, 65534, 786436, 262151, 65534, 786436, 262152, 65534, 786436, 262153, 65534, 786436, 262154, 65534, 786435, 262147, 65535, 1114113, 262148, 65535, 786436, 262149, 65535, 786436, 262150, 65535, 786436, 262151, 65535, 786436, 262152, 65535, 786436, 262153, 65535, 786436, 262154, 65535, 786435 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 4, 0 )
+}
+
+[node name="walls" type="GridMap" parent="."]
+visible = false
+mesh_library = ExtResource( 5 )
+cell_size = Vector3( 1.667, 1.986, 2 )
+bake_navigation = true
+data = {
+"cells": PoolIntArray( 3, 65532, 1179648, 65539, 65532, 1179648, 3, 65533, 1179648, 65539, 65533, 1179648, 3, 65534, 1179648, 65539, 65534, 1179648, 3, 65535, 1179648, 65539, 65535, 1179648 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, -1, 0 )
+}
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.043567, 0, 0.99905, 0, 1, 0, -0.99905, 0, -0.043567, 13.2538, 5.79103, -2.25521 )
+
+[node name="Camera" parent="Player/Head" index="0"]
+far = 416.2
+
+[node name="CanvasLayer" parent="Player" index="3"]
+layer = 0
+
+[node name="CSGSphere" type="CSGSphere" parent="Player"]
+invert_faces = true
+radius = 38.618
+smooth_faces = false
+material = SubResource( 15 )
+script = ExtResource( 12 )
+
+[node name="CSGSphere2" type="CSGSphere" parent="Player"]
+invert_faces = true
+radius = 47.467
+smooth_faces = false
+material = SubResource( 16 )
+script = ExtResource( 12 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Player"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Player/CanvasLayer2"]
+margin_right = 640.0
+margin_bottom = 480.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="combat_music" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 2 )
+bus = "Music"
+
+[node name="ambiance_music" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 6 )
+autoplay = true
+bus = "Music"
+
+[node name="walls2" type="Spatial" parent="."]
+
+[node name="CSGBox" type="CSGBox" parent="walls2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.837, 0.843, -4 )
+use_collision = true
+width = 8.0
+height = 6.0
+depth = 8.0
+material = SubResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="walls2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.837, 0.843, -4 )
+use_collision = true
+width = 8.0
+height = 6.0
+depth = 16.0
+material = SubResource( 1 )
+
+[node name="CSGBox3" type="CSGBox" parent="walls2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.837, 0.843, -4 )
+use_collision = true
+width = 12.0
+height = 6.0
+depth = 20.0
+material = SubResource( 1 )
+
+[node name="CSGBox4" type="CSGBox" parent="walls2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.837, -1.157, -4 )
+use_collision = true
+width = 8.0
+height = 6.0
+depth = 8.0
+material = SubResource( 1 )
+
+[node name="CSGBox5" type="CSGBox" parent="walls2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.163, -2.518, -4 )
+use_collision = true
+width = 14.0
+height = 6.0
+depth = 8.0
+material = SubResource( 1 )
+
+[node name="CSGBox6" type="CSGBox" parent="walls2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.043, -2.518, -3 )
+use_collision = true
+width = 18.0
+height = 6.0
+depth = 26.0
+material = SubResource( 1 )
+
+[node name="CSGBox7" type="CSGBox" parent="walls2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.043, -2.518, -16 )
+use_collision = true
+width = 8.0
+height = 6.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox8" type="CSGBox" parent="walls2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.043, -2.518, -21 )
+use_collision = true
+width = 4.0
+height = 6.0
+depth = 6.0
+material = SubResource( 1 )
+
+[node name="CSGBox9" type="CSGBox" parent="walls2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.043, -2.518, -3 )
+use_collision = true
+width = 4.0
+height = 6.0
+depth = 6.0
+material = SubResource( 1 )
+
+[node name="CSGBox10" type="CSGBox" parent="walls2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.043, -2.518, -2 )
+use_collision = true
+width = 4.0
+height = 6.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox11" type="CSGBox" parent="walls2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.043, -2.518, -1 )
+use_collision = true
+width = 4.0
+height = 6.0
+material = SubResource( 1 )
+
+[node name="noncoll" type="Spatial" parent="walls2"]
+
+[node name="Spatial" type="Spatial" parent="walls2/noncoll"]
+script = ExtResource( 11 )
+
+[node name="VisibilityEnabler" type="VisibilityEnabler" parent="walls2/noncoll/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -48 )
+aabb = AABB( -10, -9, -25, 20, 18, 48 )
+
+[node name="MeshInstance" type="MeshInstance" parent="walls2/noncoll/Spatial"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -5, -3.518, -26 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance2" type="MeshInstance" parent="walls2/noncoll/Spatial"]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -6, -3.518, -27 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3" type="MeshInstance" parent="walls2/noncoll/Spatial"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -17, -3.518, -30 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance4" type="MeshInstance" parent="walls2/noncoll/Spatial"]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -18, -3.518, -31 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance5" type="MeshInstance" parent="walls2/noncoll/Spatial"]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -16, -3.518, -31 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance6" type="MeshInstance" parent="walls2/noncoll/Spatial"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -11, -3.518, -36 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance7" type="MeshInstance" parent="walls2/noncoll/Spatial"]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -12, -3.518, -37 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance8" type="MeshInstance" parent="walls2/noncoll/Spatial"]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -10, -3.518, -37 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance9" type="MeshInstance" parent="walls2/noncoll/Spatial"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -13, -3.518, -48 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance10" type="MeshInstance" parent="walls2/noncoll/Spatial"]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -14, -3.518, -49 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance11" type="MeshInstance" parent="walls2/noncoll/Spatial"]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -12, -3.518, -49 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance12" type="MeshInstance" parent="walls2/noncoll/Spatial"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -12, -3.518, -64 )
+mesh = SubResource( 12 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance13" type="MeshInstance" parent="walls2/noncoll/Spatial"]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -14, -3.518, -65 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance14" type="MeshInstance" parent="walls2/noncoll/Spatial"]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -10, -3.518, -65 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="Spatial2" type="Spatial" parent="walls2/noncoll"]
+script = ExtResource( 11 )
+
+[node name="MeshInstance15" type="MeshInstance" parent="walls2/noncoll/Spatial2"]
+transform = Transform( 2.98023e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 2.98023e-08, -1.77636e-15, -39.989, -3.518, -3 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance16" type="MeshInstance" parent="walls2/noncoll/Spatial2"]
+transform = Transform( 1, -5.96046e-08, 2.66454e-15, 0, -4.37114e-08, -1, 5.96046e-08, 1, -4.37114e-08, -41.011, -3.518, -1.996 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance17" type="MeshInstance" parent="walls2/noncoll/Spatial2"]
+transform = Transform( -1, 0, 0, 0, -4.37114e-08, -1, 0, -1, 4.37114e-08, -41.048, -3.518, -3.984 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance18" type="MeshInstance" parent="walls2/noncoll/Spatial2"]
+transform = Transform( 2.98023e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 2.98023e-08, -1.77636e-15, -45.989, -3.509, -1 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance19" type="MeshInstance" parent="walls2/noncoll/Spatial2"]
+transform = Transform( 1, -5.96046e-08, 2.66454e-15, 0, -4.37114e-08, -1, 5.96046e-08, 1, -4.37114e-08, -48.011, -3.518, 0.00399995 )
+mesh = SubResource( 13 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance20" type="MeshInstance" parent="walls2/noncoll/Spatial2"]
+transform = Transform( -1, 0, 0, 0, -4.37114e-08, -1, 0, -1, 4.37114e-08, -48.048, -3.518, -1.984 )
+mesh = SubResource( 14 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance21" type="MeshInstance" parent="walls2/noncoll/Spatial2"]
+transform = Transform( 2.98023e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 2.98023e-08, -1.77636e-15, -47.989, -3.518, -9 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance22" type="MeshInstance" parent="walls2/noncoll/Spatial2"]
+transform = Transform( 1, -5.96046e-08, 2.66454e-15, 0, -4.37114e-08, -1, 5.96046e-08, 1, -4.37114e-08, -49.011, -3.518, -7.996 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance23" type="MeshInstance" parent="walls2/noncoll/Spatial2"]
+transform = Transform( -1, 0, 0, 0, -4.37114e-08, -1, 0, -1, 4.37114e-08, -49.048, -3.518, -9.984 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance24" type="MeshInstance" parent="walls2/noncoll/Spatial2"]
+transform = Transform( 2.98023e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 2.98023e-08, -1.77636e-15, -59.989, -3.518, -9 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance25" type="MeshInstance" parent="walls2/noncoll/Spatial2"]
+transform = Transform( 1, -5.96046e-08, 2.66454e-15, 0, -4.37114e-08, -1, 5.96046e-08, 1, -4.37114e-08, -61.011, -3.518, -7.996 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance26" type="MeshInstance" parent="walls2/noncoll/Spatial2"]
+transform = Transform( -1, 0, 0, 0, -4.37114e-08, -1, 0, -1, 4.37114e-08, -61.048, -3.518, -9.984 )
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+
+[node name="VisibilityEnabler" type="VisibilityEnabler" parent="walls2/noncoll/Spatial2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 0, -4 )
+aabb = AABB( -13, -9, -11, 26, 18, 20 )
+
+[node name="Lighting" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = SubResource( 7 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Lighting"]
+transform = Transform( -0.866026, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 5, 0 )
+shadow_bias = 0.05
+directional_shadow_max_distance = 250.0
+
+[node name="crack" type="Sprite3D" parent="."]
+transform = Transform( -3.1093e-08, 0.5, 0.866025, 2.18557e-08, 0.866025, -0.5, -1, 3.38109e-09, -3.78552e-08, -112, 74, -15 )
+pixel_size = 0.4043
+texture = ExtResource( 7 )
+script = ExtResource( 4 )
+
+[node name="Area" type="Area" parent="crack"]
+
+[node name="CollisionShape" type="CollisionShape" parent="crack/Area"]
+shape = SubResource( 20 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="crack"]
+transform = Transform( 1, -4.13869e-08, 3.77863e-08, 3.40354e-08, -0.0871558, -0.996195, 4.45227e-08, 0.996195, -0.0871558, 0, -0.764, 6.156 )
+radius = 0.001
+material = SubResource( 26 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="crack/CSGCylinder"]
+anims/RESET = SubResource( 23 )
+anims/play = SubResource( 24 )
+
+[node name="fog" type="Sprite3D" parent="."]
+transform = Transform( -3.539e-07, 0.485, 0.866026, 2.48762e-07, 0.840045, -0.5, -11.382, 3.27971e-09, -3.78552e-08, -98, 59, -15 )
+pixel_size = 0.4043
+texture = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fog"]
+playback_speed = 0.05
+anims/RESET = SubResource( 8 )
+anims/play = SubResource( 9 )
+
+[node name="tutorial" type="Spatial" parent="."]
+__meta__ = {
+"_editor_description_": "should replace with textures like in the og game"
+}
+
+[node name="Label3D" type="Label3D" parent="tutorial"]
+transform = Transform( 1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, 9, 4, -3.792 )
+visible = false
+pixel_size = 0.0385
+modulate = Color( 0.333333, 0.258824, 0.121569, 1 )
+text = "WASD - Move"
+
+[node name="Label3D2" type="Label3D" parent="tutorial"]
+transform = Transform( 1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, 5, 2, -3.792 )
+visible = false
+pixel_size = 0.0385
+modulate = Color( 0.196078, 0.113725, 0.054902, 1 )
+text = "Space - Jump"
+
+[node name="wasd" type="Sprite3D" parent="tutorial"]
+transform = Transform( 1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, 9, 4, -4 )
+pixel_size = 0.0386
+shaded = true
+texture = ExtResource( 9 )
+
+[node name="spacebar" type="Sprite3D" parent="tutorial"]
+transform = Transform( 1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, 5, 2, -4 )
+modulate = Color( 0.533333, 0.321569, 0.133333, 1 )
+pixel_size = 0.0386
+shaded = true
+texture = ExtResource( 10 )
+
+[node name="water" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 4 )
+mesh = SubResource( 18 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="invis" type="Spatial" parent="."]
+
+[node name="StaticBody" type="StaticBody" parent="invis"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, -2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="invis/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="StaticBody2" type="StaticBody" parent="invis"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 0, -27 )
+
+[node name="CollisionShape" type="CollisionShape" parent="invis/StaticBody2"]
+shape = SubResource( 10 )
+
+[node name="dialogue_triggers" type="Spatial" parent="."]
+
+[node name="Area" type="Area" parent="dialogue_triggers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, -3 )
+script = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="dialogue_triggers/Area"]
+shape = SubResource( 19 )
+
+[node name="Area2" type="Area" parent="dialogue_triggers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -22 )
+script = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="dialogue_triggers/Area2"]
+shape = SubResource( 19 )
+
+[node name="switch_to_next_scene" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -23.828
+autoplay = true
+bus = "Sound"
+
+[connection signal="camera_entered" from="walls2/noncoll/Spatial/VisibilityEnabler" to="walls2/noncoll/Spatial" method="_on_VisibilityEnabler_camera_entered"]
+[connection signal="camera_exited" from="walls2/noncoll/Spatial/VisibilityEnabler" to="walls2/noncoll/Spatial" method="_on_VisibilityEnabler_camera_exited"]
+[connection signal="camera_entered" from="walls2/noncoll/Spatial2/VisibilityEnabler" to="walls2/noncoll/Spatial2" method="_on_VisibilityEnabler_camera_entered"]
+[connection signal="camera_exited" from="walls2/noncoll/Spatial2/VisibilityEnabler" to="walls2/noncoll/Spatial2" method="_on_VisibilityEnabler_camera_exited"]
+[connection signal="area_entered" from="crack/Area" to="." method="_on_Area_area_entered"]
+[connection signal="body_entered" from="crack/Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_entered" from="dialogue_triggers/Area" to="dialogue_triggers/Area" method="_on_Area_body_entered"]
+[connection signal="body_entered" from="dialogue_triggers/Area2" to="dialogue_triggers/Area2" method="_on_Area_body_entered"]
+[connection signal="timeout" from="switch_to_next_scene" to="." method="_on_switch_to_next_scene_timeout"]
+
+[editable path="Player"]
+[editable path="Player/Head"]

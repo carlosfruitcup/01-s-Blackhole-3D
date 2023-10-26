@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/supernova.ogg-d08e625a1d89372a221afdb537551ca9.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/Voices/supernova.ogg"
+dest_files=[ "res://.import/supernova.ogg-d08e625a1d89372a221afdb537551ca9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,197 @@
+{
+	"events": [
+		{
+			"character": "character-1692206520.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hello Padvians."
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"point"
+				],
+				"method_name": "play_anim",
+				"target_node_path": "../../Alfred"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1692206520.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "This man right here, just stole from our hardest working citizen, Scafe."
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I-I didn't! All I did was just say that I thought the no talking rule was stu-"
+		},
+		{
+			"character": "character-1692206520.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Oh, so you're calling me stupid for making the rule?\nLet's see who agrees with you!\nAnyone wants to speak up?"
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "(Should I say something?)"
+		},
+		{
+			"choice": "Yes",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I agree with him!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"confused"
+				],
+				"method_name": "play_anim",
+				"target_node_path": "../../Alfred"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1692206520.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Who said that!?"
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "(Should I continue?)"
+		},
+		{
+			"choice": "Yes",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I did."
+		},
+		{
+			"character": "character-1692206520.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ah, a foreigner."
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"nevermind"
+				],
+				"method_name": "play_anim",
+				"target_node_path": "../../Alfred"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1692206520.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I'll assume you're being ignorant and spare you this time."
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You're executing someone for speaking up right now!"
+		},
+		{
+			"character": "character-1692206520.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I'm not going to continue with you, Guards kill him and this man."
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"point_player"
+				],
+				"method_name": "play_anim",
+				"target_node_path": "../../Alfred"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1691554488.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Understood."
+		},
+		{
+			"choice": "No",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1692206520.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ha ha ha! What a coward!\nI'll find you later, but now... it is time for you to die."
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "No! Please!\nI'll.. I'll take back what I said!\nPlease!"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"choice": "No",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1692206520.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "See? Nobody agrees with you.\nNeither will god."
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "No! Please!\nI'll.. I'll take back what I said!\nPlease!"
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5",
+		"file": "timeline-1692206543.json",
+		"name": "alfred_exe"
+	}
+}

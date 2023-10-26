@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/silence.ogg-1a7eb5f75a362893470b51449b616c0a.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Other/silence.ogg"
+dest_files=[ "res://.import/silence.ogg-1a7eb5f75a362893470b51449b616c0a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

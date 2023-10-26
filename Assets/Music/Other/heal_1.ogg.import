@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/heal_1.ogg-60ad84acc30200cb699e843431136874.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Other/heal_1.ogg"
+dest_files=[ "res://.import/heal_1.ogg-60ad84acc30200cb699e843431136874.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

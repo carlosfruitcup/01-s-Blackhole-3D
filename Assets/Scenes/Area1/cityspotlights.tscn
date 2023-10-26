@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/generic_textures/metal.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Scenes/Area1/cityspotlights.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.376471, 0.376471, 0.376471, 1 )
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[node name="cSpotlight" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47, 0 )
+use_collision = true
+width = 0.3
+height = 4.12
+depth = 0.3
+material = SubResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31, 0 )
+use_collision = true
+width = 0.38
+height = 1.56
+depth = 0.34
+material = SubResource( 1 )
+
+[node name="CSGBox3" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.448797, 0.893634, 0, -0.893634, 0.448797, 0, 3.17, 0.35 )
+use_collision = true
+width = 0.3
+height = 0.82
+depth = 0.3
+material = SubResource( 1 )
+
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28, 0.14 )
+aabb = AABB( -0.23, -2.28, -0.78, 0.46, 4.56, 1.56 )
+
+[connection signal="camera_entered" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_camera_entered"]
+[connection signal="camera_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_camera_exited"]

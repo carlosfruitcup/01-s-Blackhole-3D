@@ -1,0 +1,279 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Player/Weapons/Weapon.gd" type="Script" id=1]
+[ext_resource path="res://Assets/generic_textures/wood.png" type="Texture" id=2]
+[ext_resource path="res://Assets/generic_textures/metal.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sound/attack_player_bat.ogg" type="AudioStream" id=4]
+
+[sub_resource type="CylinderMesh" id=8]
+top_radius = 0.206
+bottom_radius = 0.177
+radial_segments = 7
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_texture = ExtResource( 3 )
+uv1_triplanar = true
+
+[sub_resource type="CylinderMesh" id=10]
+top_radius = 0.177
+bottom_radius = 0.125
+radial_segments = 7
+
+[sub_resource type="CylinderMesh" id=11]
+top_radius = 0.177
+bottom_radius = 0.125
+radial_segments = 7
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_color = Color( 0, 0, 0, 1 )
+albedo_texture = ExtResource( 2 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_color = Color( 0, 0, 0, 1 )
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Swing:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Spatial/Model:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.15, 0.15, 0.15 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Spatial/Model:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Spatial/Model:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "reload"
+length = 6.0
+
+[sub_resource type="Animation" id=2]
+resource_name = "swing"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Swing:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 1 ],
+"method": "hit"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Spatial/Model:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 1.1 ),
+"transitions": PoolRealArray( 1, 0.189465, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( -61.6668, 0, 0 ), Vector3( 75.0001, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "swing_"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Swing:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 2 ],
+"method": "hit"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Spatial/Model:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 1.1 ),
+"transitions": PoolRealArray( 1, 0.189465, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( -61.6668, 0, 0 ), Vector3( 75.0001, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "swing_2"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Swing:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hit"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Spatial/Model:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 56.6668 ), Vector3( 1.97079e-06, 131.667, 56.6668 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Spatial/Model:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0.13 ), Vector3( 0, 0, 0.13 ), Vector3( 0, 0, 0 ) ]
+}
+
+[node name="Purification" type="Spatial"]
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+weapon_type = "bat"
+weapon_can_block = true
+weapon_animation_damage = [ 25, 30 ]
+weapon_location = Vector3( 0.367, -0.221, -0.357 )
+weapon_rotation = Vector3( 0, 90, 0 )
+weapon_range = Vector3( 0, 0, -5 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+
+[node name="Model" type="Spatial" parent="Spatial"]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0 )
+
+[node name="Top" type="CSGMesh" parent="Spatial/Model"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53, 0 )
+mesh = SubResource( 8 )
+material = SubResource( 9 )
+
+[node name="Bottom" type="CSGMesh" parent="Spatial/Model"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 10 )
+material = SubResource( 9 )
+
+[node name="Handle" type="CSGMesh" parent="Spatial/Model"]
+transform = Transform( 1.124, 0, 0, 0, 0.722, 0, 0, 0, 1.124, 0, 0, 0 )
+mesh = SubResource( 11 )
+material = SubResource( 12 )
+
+[node name="weirdthing" type="CSGTorus" parent="Spatial/Model"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.96, 0 )
+inner_radius = 0.59
+sides = 4
+ring_sides = 3
+material = SubResource( 13 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/reload = SubResource( 5 )
+anims/swing = SubResource( 2 )
+anims/swing_ = SubResource( 14 )
+anims/swing_2 = SubResource( 6 )
+
+[node name="Swing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.244
+bus = "Sound"

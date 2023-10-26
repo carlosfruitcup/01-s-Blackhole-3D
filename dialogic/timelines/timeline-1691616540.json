@@ -1,0 +1,19 @@
+{
+	"events": [
+		{
+			"character": "character-1691616040.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Him?\nLeave him near Padva, they'll know what to do with him."
+		},
+		{
+			"change_scene": "res://Assets/Scenes/Area1/beginning.tscn",
+			"event_id": "dialogic_041"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5",
+		"file": "timeline-1691616540.json",
+		"name": "leave"
+	}
+}

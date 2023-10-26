@@ -1,0 +1,43 @@
+{
+	"events": [
+		{
+			"call_node": {
+				"arguments": [
+					"1"
+				],
+				"method_name": "dialogue_state",
+				"target_node_path": "Global"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "..."
+		},
+		{
+			"definition": "1691605096-508",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "dialogue_state",
+				"target_node_path": "Global"
+			},
+			"event_id": "dialogic_042"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5",
+		"file": "timeline-1692764915.json",
+		"name": "padva_people"
+	}
+}

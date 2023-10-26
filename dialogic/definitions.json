@@ -1,0 +1,61 @@
+{
+	"glossary": [
+
+	],
+	"variables": [
+		{
+			"id": "1691605096-508",
+			"name": "talked",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1691611384-333",
+			"name": "player_level",
+			"type": 0,
+			"value": "1"
+		},
+		{
+			"id": "1691605045-887",
+			"name": "guards",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1691617301-550",
+			"name": "salvage_talk",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1691609775-485",
+			"name": "toby_wa_question",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1691977295-840",
+			"name": "killed_guards",
+			"type": 0,
+			"value": ""
+		},
+		{
+			"id": "1692894673-379",
+			"name": "spoke",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1692490364-815",
+			"name": "info",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1692891344-343",
+			"name": "lights_out",
+			"type": 0,
+			"value": "0"
+		}
+	]
+}

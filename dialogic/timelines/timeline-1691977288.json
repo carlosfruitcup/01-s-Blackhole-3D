@@ -1,0 +1,312 @@
+{
+	"events": [
+		{
+			"call_node": {
+				"arguments": [
+					"1"
+				],
+				"method_name": "dialogue_state",
+				"target_node_path": "Global"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1691977164.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Welcome to Scafe's."
+		},
+		{
+			"condition": "==",
+			"definition": "1691605045-887",
+			"event_id": "dialogic_012",
+			"value": "1"
+		},
+		{
+			"character": "character-1691977164.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Some of the prices have been increased due to us not getting supplies.\nSorry."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_015",
+			"id": "anchor-1634488067",
+			"index": 0,
+			"name": "back"
+		},
+		{
+			"character": "character-1691977164.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "So what do you need?"
+		},
+		{
+			"choice": "Can I see what you have?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691977164.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Sure."
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"1"
+				],
+				"method_name": "show",
+				"target_node_path": "../../NavigationMeshInstance/Buildings/Scafes/ScafesShopkeeper/CanvasLayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"choice": "How do you get out of there?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691977164.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It's an automatic movable wall."
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "(Should I ask further)"
+		},
+		{
+			"choice": "Automatic? When does it go down?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691977164.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Goes down at 10:30pm.\nIt goes up at 10:30am."
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "(Should I continue asking further?)"
+		},
+		{
+			"choice": "You can't be late then right?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691977164.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Never am.\nThough, are you going to buy something?\nManagement said I can't be talking to customers for too long."
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "(Should I continue asking even further?)"
+		},
+		{
+			"choice": "Management? I thought you were the only employee?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691977164.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I am and I'm asking you to buy something or leave."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "HOSTILITY DETECTED, REMOVING 10 DOLARES FROM PAYCHECK."
+		},
+		{
+			"character": "character-1691977164.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Wait, wait, wait, I'm sorry!\nShi-... agh! \n I suggest you buy something and go use it."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"choice": "Sorry about that, let's talk about something else.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691977164.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It's alright, but no off topic talking."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"choice": "Well... how about we talk about something else?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691977164.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Alright."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"choice": "Alright then, let's talk about something else.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691977164.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Alright."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"choice": "What's with the lights?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691977164.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I don't know what you're talking about."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"choice": "Who are you?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691977164.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Not allowed to tell you, sorry."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"choice": "Mind giving me whats in the register?",
+			"condition": "",
+			"definition": "1691611384-333",
+			"event_id": "dialogic_011",
+			"value": "-7"
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "why"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"99999"
+				],
+				"method_name": "hurt",
+				"target_node_path": "../../Player"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"choice": "Nothing, sorry.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691977164.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Alright then. See you later."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "dialogue_state",
+				"target_node_path": "Global"
+			},
+			"event_id": "dialogic_042"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5",
+		"file": "timeline-1691977288.json",
+		"name": "scafes"
+	}
+}

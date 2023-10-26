@@ -1,0 +1,47 @@
+{
+	"events": [
+		{
+			"call_node": {
+				"arguments": [
+					"1"
+				],
+				"method_name": "dialogue_state",
+				"target_node_path": "Global"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "General Laws:\n1 - NO WEAPONS.\n2 - DO NOT ATTEMPT TO SPEAK TO THE LOCALS.\n3 - IF A LOCAL SPEAKS TO YOU CONTACT A PADVA INFORCER.\n4 - IF STAYING FOR PROLONGED PERIODS, CONTACT GENERAL MICHAEL.\n5 - IF STAYING FOR SHORT PERIOD, YOU MUST LEAVE BY 8PM.\n6 - PADVA INFORCERS MAY STOP YOU FOR ANY REASON AT ALL.\nFollow these rules and you'll have a fine time."
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I should probably put away this Long Dagger then."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "To unequip your weapon or armor, press TAB and type the # of the item you want to unequip."
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "dialogue_state",
+				"target_node_path": "Global"
+			},
+			"event_id": "dialogic_042"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5",
+		"file": "timeline-1691892740.json",
+		"name": "padvarules"
+	}
+}

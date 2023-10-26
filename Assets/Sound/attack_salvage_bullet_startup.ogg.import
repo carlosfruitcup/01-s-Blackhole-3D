@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/attack_salvage_bullet_startup.ogg-dbc16a2cdaa4de7de0e5b3409761cce0.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/attack_salvage_bullet_startup.ogg"
+dest_files=[ "res://.import/attack_salvage_bullet_startup.ogg-dbc16a2cdaa4de7de0e5b3409761cce0.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

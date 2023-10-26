@@ -1,0 +1,751 @@
+{
+	"events": [
+		{
+			"call_node": {
+				"arguments": [
+					"1"
+				],
+				"method_name": "dialogue_state",
+				"target_node_path": "Global"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"res://Assets/Music/Other/toby.ogg"
+				],
+				"method_name": "play_track",
+				"target_node_path": "../../MusicManager"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "play",
+				"target_node_path": "../../Toby"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hey, get in here!"
+		},
+		{
+			"condition": "",
+			"definition": "1691605096-508",
+			"event_id": "dialogic_012",
+			"value": "1"
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I know you’re new here, but you can’t talk to them. They’ll be executed if they respond."
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Why?"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "==",
+			"definition": "1691605096-508",
+			"event_id": "dialogic_012",
+			"value": "0"
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Glad that you didn’t talk to them, they’d be executed if they responded back."
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Why?"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Stupid law by Alfred, after what happened a couple of years ago, he doesn't want anyone to speak to foreigners; now only Officials and Shopkeepers can."
+		},
+		{
+			"event_id": "dialogic_015",
+			"id": "anchor-1691605358",
+			"index": 0,
+			"name": "main"
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "(What should I say?)"
+		},
+		{
+			"choice": "Who’s Alfred",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"definition": "1691609775-485",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "He’s a dictator who decides what everyone eats, does and looks; if you need an example, look at the citizens."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[Unlocked New Dialogue]"
+		},
+		{
+			"anchor_id": "anchor-1691605358",
+			"event_id": "dialogic_016"
+		},
+		{
+			"choice": "*That sounds pretty bad",
+			"condition": "",
+			"definition": "1691609775-485",
+			"event_id": "dialogic_011",
+			"value": "1"
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Worst part is, even if you follow the rules, you'll still be punished for another's crime.\nLast week a town in the north got their supply cut off because one of their members ran away."
+		},
+		{
+			"choice": "Why?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "The supplies Alfred sends are extremely small and are catered to the amount of people in a town, so when one person leaves, theres extras for the rest of the town.\nAlfred makes sure they're small enough for the towns to live, but not enough for them to live comfortably."
+		},
+		{
+			"anchor_id": "anchor-1691605358",
+			"event_id": "dialogic_016"
+		},
+		{
+			"choice": "Let's go back to Alfred.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Alright."
+		},
+		{
+			"anchor_id": "anchor-1691605358",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"choice": "Let's kill him",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It was that obvious, huh?\nWell, yeah, I'm glad that you're weirdly excited?\nAnyways, take these glasses and 100 dolares.\nAnything you want to ask?"
+		},
+		{
+			"event_id": "dialogic_015",
+			"id": "anchor-1634488067",
+			"index": 0,
+			"name": "ac"
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "(Anything I need to say?)"
+		},
+		{
+			"choice": "Mind giving me some info?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Sure. What do you need info on?"
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Do you know about the Blackhole that was sent to Dry Plains?"
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yeah.... why?"
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I got sucked into that blackhole and heard someones voice before waking up."
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hold up, you got sucked into a blackhole and you survived?"
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yes and yes, but that's not the point. I need info on who could've sent those blackholes."
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I mean, I don't know?\nThe only suspect is Nova Inc, those guys are always at the scene whenever a blackhole shows up, but theres really no reason for them to make blackholes and spend resources, but you know what, since you're helping me I'll help you."
+		},
+		{
+			"definition": "1692490364-815",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[Unlocked Talking Point for Strangers]"
+		},
+		{
+			"anchor_id": "anchor-1691605358",
+			"event_id": "dialogic_016"
+		},
+		{
+			"choice": "[Level 3] That's pretty low amount of dolares for killing someone big.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"condition": ">=",
+			"definition": "1691611384-333",
+			"event_id": "dialogic_012",
+			"value": "3"
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[Success] Fair point, I'll give you 150 more dolares, alright?\nAlright, I gotta go. I can't be seen out here."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "<",
+			"definition": "1691611384-333",
+			"event_id": "dialogic_012",
+			"value": "3"
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[Failed] Look, I get what you're saying, but I'm already taking a gamble on your skills and giving you my possessions.\nOk now I gotta go. Can't be seen out here for too long."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"choice": "Nothing else, let's go.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Alright, good luck."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"choice": "Im guessing you want me to kill him?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Read my mind, though as expected, you don't sound enthusiastic about it.\nMaybe I can change that with 100 Dinero and these glasses. \nWhat do you think?"
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "(What should I say?)"
+		},
+		{
+			"choice": "Mind giving me some info?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Sure. What do you need info on?"
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Do you know about the Blackhole that was sent to Dry Plains?"
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yeah.... why?"
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I got sucked into that blackhole and heard someones voice before waking up."
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hold up, you got sucked into a blackhole and you survived?"
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yes and yes, but that's not the point. I need info on who could've sent those blackholes."
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I mean, I don't know?\nThe only suspect is Nova Inc, those guys are always at the scene whenever a blackhole shows up, but theres really no reason for them to make blackholes and spend resources, but you know what, since you're helping me I'll help you."
+		},
+		{
+			"definition": "1692490364-815",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[Unlocked Talking Point for Strangers]"
+		},
+		{
+			"choice": "[Level 3] I think I'd be more enthusiastic if you gave me more dinero.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"condition": ">=",
+			"definition": "1691611384-333",
+			"event_id": "dialogic_012",
+			"value": "3"
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[Success] You know what? Considering the person and the weirdness of this,\nI'll give you 150 more dinero alright?\nAnyways, I gotta go. Can't be seen out here too long.\nGood luck."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "<",
+			"definition": "1691611384-333",
+			"event_id": "dialogic_012",
+			"value": "3"
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[Failed] I don't know about that. I think this is enough to get you going.\nEither way, I gotta go. Can't be seen out here too long.\nGood luck."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"choice": "I think thats good.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Good. Well I gotta go now, I can't be seen out here for too long.\nGood luck."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"choice": "Get to the point.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Fair enough. The gist is, I want you to go kill the president, Alfred Bates for 100 dolares and these glasses."
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "(Anything I need to say?)"
+		},
+		{
+			"choice": "Why?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Maybe if you listened to what I was going to say, you would've gotten why.\nBut basically he's a dictator who forces everyone to do what he says or they'll be executed."
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "(Anything I need to say?)"
+		},
+		{
+			"choice": "Ok.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Alright then, take these.\nI gotta go now, can't be seen out here for too long.\nGood luck. "
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"choice": "[Level 3] Only 50 dolares for killing someone like Alfred?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"condition": ">=",
+			"definition": "1691611384-333",
+			"event_id": "dialogic_012",
+			"value": "3"
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[Success] Fair, I'll give you 150 dolares more.\nThough, I gotta go now.\nGood luck."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "<",
+			"definition": "1691611384-333",
+			"event_id": "dialogic_012",
+			"value": "3"
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[Failed] That is a fair point, but I'm already gambling on you by giving you this info and my dinero and possessions.\nAnyways, I gotta go now, I can't be seen out here for too long.\nGood luck."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"choice": "Ok.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "No questions? That's surprising.\nWell, before you go, take these 50 dolares and glasses.\nAnd remember to go to the alleyways for info, though they are dangerous."
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "(Anything I need to say?)"
+		},
+		{
+			"choice": "[Level 3] Only 50 dolares for killing someone like Alfred?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"condition": ">=",
+			"definition": "1691611384-333",
+			"event_id": "dialogic_012",
+			"value": "3"
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[Success] Fair, I'll give you 150 dolares more.\nThough, I gotta go now.\nGood luck."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "<",
+			"definition": "1691611384-333",
+			"event_id": "dialogic_012",
+			"value": "3"
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[Failed] That is a fair point, but I'm already gambling on you by giving you this info and my dinero and possessions.\nAnyways, I gotta go now, I can't be seen out here for too long.\nGood luck."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"choice": "Goodbye.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691602438.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I'll hopefully see you later."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_015",
+			"id": "anchor-1634488067",
+			"index": 0,
+			"name": "Leave"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "theroar",
+				"target_node_path": "../../Toby"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"res://Assets/Music/AreaBG/1/1b_padva_background_NEW.ogg"
+				],
+				"method_name": "play_track",
+				"target_node_path": "../../MusicManager"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"toby_talk",
+					"1"
+				],
+				"method_name": "set",
+				"target_node_path": "Global"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "dialogue_state",
+				"target_node_path": "Global"
+			},
+			"event_id": "dialogic_042"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5",
+		"file": "timeline-1691604963.json",
+		"name": "toby_speak"
+	}
+}

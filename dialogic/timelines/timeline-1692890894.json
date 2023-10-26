@@ -1,0 +1,324 @@
+{
+	"events": [
+		{
+			"call_node": {
+				"arguments": [
+					"1"
+				],
+				"method_name": "dialogue_state",
+				"target_node_path": "Global"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"condition": "",
+			"definition": "1692891344-343",
+			"event_id": "dialogic_012",
+			"value": "0"
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[Whispering] If you can turn off the cameras, we can speak. Go to the guy on my left, he'll give you the hint."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1692891344-343",
+			"event_id": "dialogic_012",
+			"value": "1"
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Thanks! Though our time is limited. If you need info, tell me now."
+		},
+		{
+			"event_id": "dialogic_015",
+			"id": "anchor-1634488067",
+			"index": 0,
+			"name": "back"
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "(Anything I need to ask?)"
+		},
+		{
+			"choice": "Was Nova Inc at the blackhole?",
+			"condition": "",
+			"definition": "1692490364-815",
+			"event_id": "dialogic_011",
+			"value": "1"
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Nova Inc? Yeah they were, they were pretty fast too."
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "(Anything else?)"
+		},
+		{
+			"choice": "Have they ever been to any places that has had blackholes?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Couple of times, I think they setup shop in Fruitbag.\nFeel bad for them honestly, beaten by the war, half of the country sucked in by a blackhole and Alfred killing everyone they could find there."
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "(Should I ask further?)"
+		},
+		{
+			"choice": "War?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You must living under a rock, Fruitbag and Padva was probably the deadliest war we've had.\nBasically, Fruitbag didn't like how Alfred was treating it's members who went there and tried killing a couple of officials.\nDidn't go too well.\nAnyways, you should go now."
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Alright, thanks for the info."
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "No problem, goodbye now."
+		},
+		{
+			"definition": "1692894673-379",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"choice": "Thanks for the info, that's all I need.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "No problem, goodbye."
+		},
+		{
+			"definition": "1692894673-379",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"choice": "That's all. Thanks though.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "No problem, goodbye."
+		},
+		{
+			"definition": "1692894673-379",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"choice": "Was Alfred always like this?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yeah, he's been the president for 20 years now."
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "(Anything else?)"
+		},
+		{
+			"choice": "Were there any other presidents?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yeah, but none of them were like Alfred.\nThe last one before him was... Toby something."
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "(Anything else?)"
+		},
+		{
+			"choice": "Toby? The guy with the dark green shirt?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Who are you talking about?\nToby was executed, along with his family, but they never found the little one."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"choice": "Let's talk about something else.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Alright, but remember to make it quick!"
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"choice": "That's all, thanks.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Alright, goodbye."
+		},
+		{
+			"definition": "1692894673-379",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"choice": "Let's talk about something else.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1692490460.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Alright, but remember to make it quick!"
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "dialogue_state",
+				"target_node_path": "Global"
+			},
+			"event_id": "dialogic_042"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5",
+		"file": "timeline-1692890894.json",
+		"name": "padp_whis"
+	}
+}

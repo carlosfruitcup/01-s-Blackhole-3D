@@ -1,0 +1,47 @@
+{
+	"events": [
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "1234567890!@#$%^&*()_+-=QWERTYUIOP[]ASDFGHJKLZXCVBNM<>?qwertyuiopasdfghjklzxcvbnm"
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "?"
+		},
+		{
+			"choice": "1",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691459955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "This is your 01's Blackhole and I'm closing it."
+		},
+		{
+			"choice": "2",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5",
+		"file": "timeline-1691459792.json",
+		"name": "timeline-1691459792.json"
+	}
+}

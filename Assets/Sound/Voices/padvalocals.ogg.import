@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/padvalocals.ogg-f45e08913bd973a2eb06bda585caef63.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/Voices/padvalocals.ogg"
+dest_files=[ "res://.import/padvalocals.ogg-f45e08913bd973a2eb06bda585caef63.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

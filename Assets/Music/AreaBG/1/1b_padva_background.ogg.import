@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/1b_padva_background.ogg-de0e6890c1fff08120fdb3d965fd7351.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/AreaBG/1/1b_padva_background.ogg"
+dest_files=[ "res://.import/1b_padva_background.ogg-de0e6890c1fff08120fdb3d965fd7351.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

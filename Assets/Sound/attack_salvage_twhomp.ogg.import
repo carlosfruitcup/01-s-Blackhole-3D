@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/attack_salvage_twhomp.ogg-53fbad58f5ef34e7f062fa64dddb2c32.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/attack_salvage_twhomp.ogg"
+dest_files=[ "res://.import/attack_salvage_twhomp.ogg-53fbad58f5ef34e7f062fa64dddb2c32.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

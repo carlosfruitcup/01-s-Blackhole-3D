@@ -1,0 +1,1278 @@
+[gd_scene load_steps=53 format=2]
+
+[ext_resource path="res://Player/MovementController.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Head.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Sprint.gd" type="Script" id=3]
+[ext_resource path="res://Player/LevelUI_nxt2hpsta.gd" type="Script" id=4]
+[ext_resource path="res://Player/WeaponSys.gd" type="Script" id=5]
+[ext_resource path="res://Assets/UI/crosshair.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/progress_bars/progress_bar_player_overlay.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/progress_bars/progress_bar_player.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/level.png" type="Texture" id=9]
+[ext_resource path="res://Player/ProgressUI.gd" type="Script" id=10]
+[ext_resource path="res://Player/StaminaRegen.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Sound/footsteps_player_nox_sound.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Sound/footsteps_2_player_nox_sound.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Player/LevelSys.gd" type="Script" id=14]
+[ext_resource path="res://Player/LevelUI.gd" type="Script" id=15]
+[ext_resource path="res://Assets/UI/progress_bars/level_ui_xp_overlay.png" type="Texture" id=16]
+[ext_resource path="res://Assets/UI/progress_bars/level_ui_xp.png" type="Texture" id=17]
+[ext_resource path="res://Player/FPS.gd" type="Script" id=18]
+[ext_resource path="res://Player/Inventory.gd" type="Script" id=19]
+[ext_resource path="res://Player/Paused.gd" type="Script" id=20]
+[ext_resource path="res://Assets/Fonts/normal_font.tres" type="DynamicFont" id=21]
+[ext_resource path="res://Assets/Fonts/CarlosHandwriting-Regular.otf" type="DynamicFontData" id=22]
+[ext_resource path="res://Assets/Sound/damage_jack.ogg" type="AudioStream" id=23]
+[ext_resource path="res://Player/Dead.gd" type="Script" id=24]
+[ext_resource path="res://Assets/Music/Other/level_up.ogg" type="AudioStream" id=25]
+[ext_resource path="res://Player/Interact.gd" type="Script" id=26]
+[ext_resource path="res://Assets/UI/damaged.png" type="Texture" id=27]
+[ext_resource path="res://Player/Settings.gd" type="Script" id=28]
+[ext_resource path="res://Player/ControlsUI.gd" type="Script" id=29]
+[ext_resource path="res://Assets/UI/controls.png" type="Texture" id=30]
+[ext_resource path="res://Assets/UI/blackhole.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Music/Other/heal_0.ogg" type="AudioStream" id=32]
+[ext_resource path="res://Assets/Music/Other/heal_1.ogg" type="AudioStream" id=33]
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:h_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:v_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "shake"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:h_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -1.088, 1.981, 1.126, -1.336 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:v_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.512, -0.773, 1.271, -1.076 ]
+}
+
+[sub_resource type="GDScript" id=5]
+script/source = "extends TextureProgress
+
+
+func update_value(val, max_val, reset):
+	value = val
+	max_value = max_val
+	
+	if reset == true:
+		get_parent().get_parent().get_parent().get_node(\"Stamina/Timer\").start(4)
+
+"
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Control/XP:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "play"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Control/XP:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 4.6, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Shader" id=1]
+code = "//SHADER ORIGINALY CREADED BY \"TimothyLottes\" FROM SHADERTOY
+//PORTED AND MODIFYED TO GODOT BY AHOPNESS (@ahopness)
+//LICENSE : CC0
+//COMATIBLE WITH : GLES2, GLES3, WEBGL
+//SHADERTOY LINK : https://www.shadertoy.com/view/MsjXzh
+
+// PUBLIC DOMAIN CRT STYLED SCAN-LINE SHADER
+//
+//   by Timothy Lottes
+//
+// This is more along the style of a really good CGA arcade monitor.
+// With RGB inputs instead of NTSC.
+// The shadow mask example has the mask rotated 90 degrees for less chromatic aberration.
+//
+// Left it unoptimized to show the theory behind the algorithm.
+//
+// It is an example what I personally would want as a display option for pixel art games.
+// Please take and use, change, or whatever.
+
+shader_type canvas_item;
+
+// Emulated input resolution.
+uniform vec2 res;
+
+// Mask type
+//  0 = Very compressed TV style shadow mask
+//  1 = Stretched VGA style shadow mask (same as prior shaders)
+//  2 = VGA style shadow mask 
+uniform int mask_type :hint_range(0, 2) = 0;
+
+// Bloom Type
+//  0 = Normalized exposure
+//  1 = Aditive bloom
+//  2 = No Bloom
+uniform int bloom_type :hint_range(0, 2) = 0;
+
+// Hardness of scanline.
+//  -8.0 = soft
+// -16.0 = medium
+uniform float hardScan :hint_range(-12.0, -1.0) = -8.0;
+
+// Hardness of pixels in scanline.
+// -2.0 = soft
+// -4.0 = hard
+uniform float hardPix :hint_range(-4.0, 0.0) = -2.0;
+
+// Hardness of short vertical bloom.
+//  -1.0 = wide to the point of clipping (bad)
+//  -1.5 = wide
+//  -4.0 = not very wide at all
+uniform float hardBloomScan :hint_range(-4.0, 0.0) = -2.0;
+
+// Hardness of short horizontal bloom.
+//  -0.5 = wide to the point of clipping (bad)
+//  -1.0 = wide
+//  -2.0 = not very wide at all
+uniform float hardBloomPix :hint_range(-2.0, 0.0) = -1.5;
+
+// Amount of small bloom effect.
+//  1.0/1.0 = only bloom
+//  1.0/16.0 = what I think is a good amount of small bloom
+//  0.0     = no bloom
+uniform float bloomAmount :hint_range(1.0, 16.0) = 16.0;
+
+// Display warp.
+// 0.0 = none
+// 1.0/8.0 = extreme
+uniform vec2 warp = vec2(64.0, 24.0); 
+
+// Amount of shadow mask.
+uniform float maskDark  :hint_range(0.0, 1.0) = 0.5;
+uniform float maskLight :hint_range(1.0, 2.0) = 1.5;
+
+//------------------------------------------------------------------------
+
+// sRGB to Linear.
+// Assuing using sRGB typed textures this should not be needed.
+float ToLinear1(float c){ return(c <= 0.04045) ? c / 12.92 : pow((c + 0.055) / 1.055, 2.4); }
+vec3 ToLinear(vec3 c){ return vec3(ToLinear1(c.r), ToLinear1(c.g), ToLinear1(c.b)); }
+
+// Linear to sRGB.
+// Assuing using sRGB typed textures this should not be needed.
+float ToSrgb1(float c){ return(c < 0.0031308?c * 12.92 : 1.055 * pow(c, 0.41666) - 0.055); }
+vec3 ToSrgb(vec3 c){ return vec3(ToSrgb1(c.r), ToSrgb1(c.g), ToSrgb1(c.b)); }
+
+// Nearest emulated sample given floating point position and texel offset.
+// Also zero's off screen.
+vec3 Fetch(vec2 pos, vec2 off, sampler2D iChannel0){
+	pos = floor(pos * res + off) / res;
+	
+	if(max(abs(pos.x - 0.5), abs(pos.y - 0.5)) > 0.5){
+		return vec3(0.0, 0.0, 0.0);
+	}
+	
+	return ToLinear(texture(iChannel0 , pos.xy , -16.0).rgb);
+}
+
+// Distance in emulated pixels to nearest texel.
+vec2 Dist(vec2 pos){ 
+	pos = pos * res; 
+	return - ((pos - floor(pos)) - vec2(0.5));
+}
+    
+// 1D Gaussian.
+float Gaus(float pos, float scale){ return exp2(scale * pos * pos); }
+
+// 3-tap Gaussian filter along horz line.
+vec3 Horz3(vec2 pos, float off, sampler2D iChannel0){
+	vec3 b = Fetch(pos, vec2(-1.0, off), iChannel0);
+	vec3 c = Fetch(pos, vec2( 0.0, off), iChannel0);
+	vec3 d = Fetch(pos, vec2( 1.0, off), iChannel0);
+	float dst = Dist(pos).x;
+	
+	// Convert distance to weight.
+	float scale = hardPix;
+	float wb = Gaus(dst - 1.0, scale);
+	float wc = Gaus(dst + 0.0, scale);
+	float wd = Gaus(dst + 1.0, scale);
+	
+	// Return filtered sample.
+	return (b * wb + c * wc + d * wd) / (wb + wc + wd);
+}
+// 5-tap Gaussian filter along horz line.
+vec3 Horz5(vec2 pos, float off, sampler2D iChannel0){
+	vec3 a = Fetch(pos, vec2(-2.0, off), iChannel0);
+	vec3 b = Fetch(pos, vec2(-1.0, off), iChannel0);
+	vec3 c = Fetch(pos, vec2( 0.0, off), iChannel0);
+	vec3 d = Fetch(pos, vec2( 1.0, off), iChannel0);
+	vec3 e = Fetch(pos, vec2( 2.0, off), iChannel0);
+	float dst = Dist(pos).x;
+	
+	// Convert distance to weight.
+	float scale = hardPix;
+	float wa = Gaus(dst - 2.0, scale);
+	float wb = Gaus(dst - 1.0, scale);
+	float wc = Gaus(dst + 0.0, scale);
+	float wd = Gaus(dst + 1.0, scale);
+	float we = Gaus(dst + 2.0, scale);
+	
+	// Return filtered sample.
+	return (a * wa + b * wb + c * wc + d * wd + e * we) / (wa + wb + wc + wd + we);
+}
+// 7-tap Gaussian filter along horz line.
+vec3 Horz7(vec2 pos, float off, sampler2D iChannel0){
+	vec3 a = Fetch(pos, vec2(-3.0, off), iChannel0);
+	vec3 b = Fetch(pos, vec2(-2.0, off), iChannel0);
+	vec3 c = Fetch(pos, vec2( 1.0, off), iChannel0);
+	vec3 d = Fetch(pos, vec2( 0.0, off), iChannel0);
+	vec3 e = Fetch(pos, vec2( 1.0, off), iChannel0);
+	vec3 f = Fetch(pos, vec2( 2.0, off), iChannel0);
+	vec3 g = Fetch(pos, vec2( 3.0, off), iChannel0);
+	float dst = Dist(pos).x;
+	
+	// Convert distance to weight.
+	float scale = hardBloomPix;
+	float wa = Gaus(dst - 3.0, scale);
+	float wb = Gaus(dst - 2.0, scale);
+	float wc = Gaus(dst - 1.0, scale);
+	float wd = Gaus(dst + 0.0, scale);
+	float we = Gaus(dst + 1.0, scale);
+	float wf = Gaus(dst + 2.0, scale);
+	float wg = Gaus(dst + 3.0, scale);
+	
+	// Return filtered sample.
+	return (a * wa + b * wb + c * wc + d * wd + e * we + f * wf + g * wg) / (wa + wb + wc + wd + we + wf + wg);
+}
+
+// Return scanline weight.
+float Scan(vec2 pos, float off){
+	float dst = Dist(pos).y;
+	
+	return Gaus(dst + off, hardScan);
+}
+
+// Return scanline weight for bloom.
+float BloomScan(vec2 pos, float off){
+	float dst = Dist(pos).y;
+	
+	return Gaus(dst + off, hardBloomScan);
+}
+
+// Allow nearest three lines to effect pixel.
+vec3 Tri(vec2 pos, sampler2D iChannel0){
+	vec3 a = Horz3(pos,-1.0, iChannel0);
+	vec3 b = Horz5(pos, 0.0, iChannel0);
+	vec3 c = Horz3(pos, 1.0, iChannel0);
+	
+	float wa = Scan(pos,-1.0);
+	float wb = Scan(pos, 0.0);
+	float wc = Scan(pos, 1.0);
+	
+	return a * wa + b * wb + c * wc;
+}
+
+// Small bloom.
+vec3 Bloom(vec2 pos, sampler2D iChannel0){
+	vec3 a = Horz5(pos,-2.0, iChannel0);
+	vec3 b = Horz7(pos,-1.0, iChannel0);
+	vec3 c = Horz7(pos, 0.0, iChannel0);
+	vec3 d = Horz7(pos, 1.0, iChannel0);
+	vec3 e = Horz5(pos, 2.0, iChannel0);
+	
+	float wa = BloomScan(pos,-2.0);
+	float wb = BloomScan(pos,-1.0);
+	float wc = BloomScan(pos, 0.0);
+	float wd = BloomScan(pos, 1.0);
+	float we = BloomScan(pos, 2.0);
+	
+	return a * wa + b * wb + c * wc + d * wd + e * we;
+}
+
+// Distortion of scanlines, and end of screen alpha.
+vec2 Warp(vec2 pos){
+	pos = pos * 2.0 - 1.0;    
+	pos *= vec2(1.0 + (pos.y * pos.y) * 1.0 / warp.x, 1.0 + (pos.x * pos.x) * 1.0/ warp.y);
+	
+	return pos * 0.5+0.5;
+}
+
+vec3 Mask(vec2 pos){
+	if (mask_type == 0){
+		float line = maskLight;
+		float odd = 0.0;
+		
+		if(fract(pos.x / 6.0) < 0.5) odd = 1.0;
+		if(fract((pos.y + odd) / 2.0) < 0.5) line = maskDark;  
+		pos.x = fract(pos.x / 3.0);
+		
+		vec3 mask = vec3(maskDark, maskDark, maskDark);
+		if(pos.x < 0.333)mask.r = maskLight;
+		else if(pos.x < 0.666)mask.g = maskLight;
+		else mask.b = maskLight;
+		
+		mask *= line;
+		return mask;
+	}else if (mask_type == 1){
+		pos.x += pos.y * 3.0;
+		
+		vec3 mask = vec3(maskDark, maskDark, maskDark);
+		pos.x = fract(pos.x / 6.0);
+		if(pos.x < 0.333)mask.r = maskLight;
+		else if(pos.x < 0.666)mask.g = maskLight;
+		else mask.b = maskLight;
+		
+		return mask;
+	}else if (mask_type == 2){
+		pos.xy = floor(pos.xy * vec2(1.0, 0.5));
+		pos.x += pos.y * 3.0;
+		
+		vec3 mask = vec3(maskDark, maskDark, maskDark);
+		pos.x = fract(pos.x / 6.0);
+		if(pos.x < 0.333)mask.r = maskLight;
+		else if(pos.x < 0.666)mask.g = maskLight;
+		else mask.b = maskLight;
+	
+		return mask;
+	}
+  }    
+
+// Draw dividing bars.
+float Bar(float pos, float bar){ pos -= bar; return pos * pos < 4.0 ? 0.0 : 1.0; }
+
+// Entry.
+void fragment(){
+	vec2 pos = Warp(FRAGCOORD.xy / (1.0 / SCREEN_PIXEL_SIZE).xy);
+	
+	COLOR.rgb = Tri(pos, SCREEN_TEXTURE) * Mask(FRAGCOORD.xy);
+	if (bloom_type == 0){ 
+		COLOR.rgb = mix(COLOR.rgb,Bloom(pos, SCREEN_TEXTURE), 1.0 / bloomAmount);    
+	}else if (bloom_type == 1){
+		COLOR.rgb += Bloom(pos, SCREEN_TEXTURE) * 1.0 / bloomAmount;    
+	} 
+	
+	COLOR.a = 1.0;  
+	COLOR.rgb = ToSrgb(COLOR.rgb);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/res = Vector2( 640, 480 )
+shader_param/mask_type = 2
+shader_param/bloom_type = 0
+shader_param/hardScan = -3.901
+shader_param/hardPix = -4.0
+shader_param/hardBloomScan = -2.0
+shader_param/hardBloomPix = -1.5
+shader_param/bloomAmount = 16.0
+shader_param/warp = Vector2( 128, 64 )
+shader_param/maskDark = 0.5
+shader_param/maskLight = 1.5
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.745098, 1, 0.721569, 0 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "play"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.745098, 1, 0.721569, 1 ), Color( 0.745098, 1, 0.721569, 0 ), Color( 0.745098, 1, 0.721569, 1 ), Color( 0.745098, 1, 0.721569, 0 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "play"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.6 ),
+"transitions": PoolRealArray( 0.0769466, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://Assets/Fonts/CarlosHandwriting-Regular.otf"
+
+[sub_resource type="DynamicFont" id=10]
+size = 50
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 9 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 35
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 9 )
+
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 320, 240 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "out"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -632, -496 ), Vector2( 320, 240 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1872, 1336 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "play"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1872, 1336 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 320, 240 ), Vector2( -632, -496 ) ]
+}
+
+[sub_resource type="DynamicFont" id=8]
+size = 15
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 22 )
+
+[node name="Player" instance=ExtResource( 1 )]
+collision_layer = 1
+collision_mask = 1
+__meta__ = {
+"_edit_vertical_guides_": [ 320.0 ]
+}
+gravity_multiplier = 4.5
+jump_height = 14
+
+[node name="Head" parent="." index="1" instance=ExtResource( 2 )]
+
+[node name="Camera" parent="Head" index="0"]
+fov = 100.0
+
+[node name="RayCast3" type="RayCast" parent="Head/Camera" index="0"]
+enabled = true
+cast_to = Vector3( 0, 0, -5 )
+collision_mask = 4
+collide_with_areas = true
+script = ExtResource( 26 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Head/Camera" index="1" groups=["donothide"]]
+playback_speed = -0.82
+anims/RESET = SubResource( 6 )
+anims/shake = SubResource( 7 )
+
+[node name="RayCast" type="RayCast" parent="Head" index="1"]
+cast_to = Vector3( 0, 0, -5 )
+collision_mask = 32771
+
+[node name="Sprite3D" type="Sprite3D" parent="Head/RayCast" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.00448 )
+pixel_size = 0.0059
+shaded = true
+texture = ExtResource( 6 )
+
+[node name="RayCast2" type="RayCast" parent="Head/RayCast" index="1"]
+cast_to = Vector3( 0, 0, -25 )
+collision_mask = 32771
+
+[node name="Sprint" type="Node" parent="." index="2" groups=["donothide"]]
+script = ExtResource( 3 )
+sprint_speed = 10
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="3" groups=["donothide"]]
+
+[node name="Control" type="Control" parent="CanvasLayer" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Level2" type="TextureRect" parent="CanvasLayer/Control" index="0"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 9 )
+expand = true
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Level2" index="0"]
+anchor_top = 0.146
+anchor_bottom = 0.167
+margin_top = -15.008
+margin_right = 48.0
+margin_bottom = 47.984
+text = "0
+"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": "this makes no sense?
+why do i have to push this up for it to be properly aligned?"
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/Level2" index="1"]
+visible = false
+anchor_top = 0.146
+anchor_bottom = 0.917
+margin_left = -33.0
+margin_top = -26.008
+margin_right = 159.0
+margin_bottom = 144.984
+rect_scale = Vector2( 0.6, 0.6 )
+text = "9999/10000"
+align = 1
+valign = 1
+
+[node name="TextureProgress" type="TextureProgress" parent="CanvasLayer/Control/Level2" index="2"]
+margin_right = 48.0
+margin_bottom = 48.0
+max_value = 150.0
+texture_under = ExtResource( 17 )
+texture_progress = ExtResource( 16 )
+fill_mode = 4
+nine_patch_stretch = true
+
+[node name="Stamina" type="TextureProgress" parent="CanvasLayer/Control" index="1" groups=["Stamina"]]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -272.0
+margin_top = -456.0
+margin_right = -96.0
+margin_bottom = -432.0
+value = 100.0
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 7 )
+nine_patch_stretch = true
+script = SubResource( 5 )
+
+[node name="Health" type="TextureProgress" parent="CanvasLayer/Control" index="2" groups=["Health"]]
+anchor_right = 0.3
+anchor_bottom = 0.05
+margin_left = 48.0
+margin_right = 48.0
+value = 100.0
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 7 )
+tint_progress = Color( 0.733333, 0.435294, 0.435294, 1 )
+nine_patch_stretch = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Interact" type="Label" parent="CanvasLayer/Control" index="3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = 16.0
+margin_right = 128.0
+margin_bottom = 30.0
+custom_fonts/font = ExtResource( 21 )
+text = "E - Interact"
+align = 1
+valign = 1
+
+[node name="XP" type="TextureProgress" parent="CanvasLayer/Control" index="4" groups=["Level"]]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.25
+anchor_top = 0.216667
+anchor_right = 0.75
+anchor_bottom = 0.266667
+max_value = 150.0
+value = 25.0
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 7 )
+tint_progress = Color( 0.752941, 1, 0.67451, 1 )
+nine_patch_stretch = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/XP" index="0"]
+anchor_left = -0.27
+anchor_top = 1.333
+anchor_right = 0.267
+anchor_bottom = 1.333
+margin_left = 88.4
+margin_top = -7.992
+margin_right = 234.56
+margin_bottom = 6.008
+text = "Level: 1| XP: 0/100"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/XP" index="1"]
+root_node = NodePath("../../../..")
+anims/RESET = SubResource( 3 )
+anims/play = SubResource( 4 )
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/XP" index="2"]
+margin_top = 48.0
+margin_right = 320.0
+margin_bottom = 66.0
+custom_colors/font_color = Color( 0.172549, 1, 0, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Gained 100 Dolares
+Gained 150 XP"
+align = 1
+valign = 1
+
+[node name="speedster_ui" type="ColorRect" parent="CanvasLayer/Control" index="5"]
+modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 2 )
+margin_right = 640.0
+margin_bottom = 480.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FPS" type="Label" parent="CanvasLayer/Control" index="6"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -72.0
+margin_top = -16.0
+margin_right = 72.0
+text = "FPS:30"
+align = 1
+valign = 1
+script = ExtResource( 18 )
+
+[node name="Reminder" type="Label" parent="CanvasLayer/Control" index="7"]
+modulate = Color( 0.745098, 1, 0.721569, 0 )
+anchor_left = 0.660937
+anchor_top = -0.00041666
+anchor_right = 1.0
+anchor_bottom = 0.09825
+margin_top = 0.199997
+margin_bottom = -8.16
+custom_fonts/font = ExtResource( 21 )
+text = "You have Skill Points to use!
+Use L to open the menu!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/Reminder" index="0"]
+autoplay = "RESET"
+playback_speed = 0.25
+anims/RESET = SubResource( 13 )
+anims/play = SubResource( 14 )
+
+[node name="dmg" type="TextureRect" parent="CanvasLayer/Control" index="8"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 27 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/dmg" index="0"]
+anims/RESET = SubResource( 15 )
+anims/play = SubResource( 16 )
+
+[node name="Dead" type="ColorRect" parent="CanvasLayer/Control" index="9"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.580392, 0.262745, 0.262745, 0.458824 )
+script = ExtResource( 24 )
+
+[node name="dead" type="Label" parent="CanvasLayer/Control/Dead" index="0"]
+anchor_left = 0.225
+anchor_top = 0.5
+anchor_right = 0.225
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -104.0
+margin_right = 496.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 10 )
+text = "You Died!"
+align = 1
+valign = 1
+
+[node name="dead2" type="Label" parent="CanvasLayer/Control/Dead" index="1"]
+self_modulate = Color( 0.552941, 0.552941, 0.552941, 1 )
+anchor_left = 0.225
+anchor_top = 0.5
+anchor_right = 0.225
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -80.0
+margin_right = 496.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 11 )
+text = "Respawning in 3 seconds..."
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Control/Dead" index="2"]
+one_shot = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" index="10"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 320.0
+margin_top = 240.0
+margin_right = 320.0
+margin_bottom = 240.0
+mouse_filter = 2
+texture = ExtResource( 31 )
+expand = true
+stretch_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/TextureRect" index="0"]
+autoplay = "out"
+anims/RESET = SubResource( 17 )
+anims/out = SubResource( 19 )
+anims/play = SubResource( 18 )
+
+[node name="Paused" type="ColorRect" parent="CanvasLayer/Control" index="11"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.560784 )
+script = ExtResource( 20 )
+
+[node name="Settings" type="Button" parent="CanvasLayer/Control/Paused" index="0"]
+anchor_left = 0.2875
+anchor_top = 0.967
+anchor_right = 0.3875
+anchor_bottom = 1.008
+margin_left = -184.0
+margin_top = -416.16
+margin_right = -184.0
+margin_bottom = -415.84
+text = "Settings"
+flat = true
+script = ExtResource( 28 )
+
+[node name="Controls" type="Button" parent="CanvasLayer/Control/Paused" index="1"]
+anchor_left = 0.45
+anchor_top = 0.967
+anchor_right = 0.551562
+anchor_bottom = 1.008
+margin_left = -288.0
+margin_top = -392.16
+margin_right = -288.0
+margin_bottom = -391.84
+text = "Controls"
+flat = true
+script = ExtResource( 29 )
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Paused/Controls" index="0"]
+visible = false
+margin_top = -72.0
+margin_right = 640.0
+margin_bottom = 408.0
+texture = ExtResource( 30 )
+
+[node name="BTTS" type="Button" parent="CanvasLayer/Control/Paused" index="2"]
+anchor_left = 0.625
+anchor_top = 0.967
+anchor_right = 0.834375
+anchor_bottom = 1.008
+margin_left = -400.0
+margin_top = -368.16
+margin_right = -400.0
+margin_bottom = -367.84
+text = "Back to TitleScreen"
+flat = true
+icon_align = 1
+
+[node name="Inventory" type="Control" parent="CanvasLayer/Control" index="12"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 19 )
+
+[node name="BG" type="NinePatchRect" parent="CanvasLayer/Control/Inventory" index="0"]
+anchor_left = 1.7
+anchor_top = 1.73333
+anchor_right = 15.2875
+anchor_bottom = 11.9854
+margin_left = -1024.0
+margin_top = -768.0
+margin_right = -9208.0
+margin_bottom = -5369.0
+texture = ExtResource( 9 )
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 4
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="DTimer" type="Timer" parent="CanvasLayer/Control/Inventory" index="1"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Dialogue" type="Label" parent="CanvasLayer/Control/Inventory" index="2"]
+anchor_left = 0.3
+anchor_top = 0.948
+anchor_right = 0.3
+anchor_bottom = 0.948
+margin_top = -7.04004
+margin_right = 256.0
+margin_bottom = 6.95996
+custom_fonts/font = ExtResource( 21 )
+align = 1
+valign = 1
+
+[node name="List" type="RichTextLabel" parent="CanvasLayer/Control/Inventory" index="3"]
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 256.0
+margin_bottom = 376.0
+custom_fonts/normal_font = ExtResource( 21 )
+bbcode_enabled = true
+
+[node name="BG" type="ColorRect" parent="CanvasLayer/Control/Inventory/List" index="1"]
+modulate = Color( 0, 0, 0, 0.168627 )
+show_behind_parent = true
+margin_right = 184.0
+margin_bottom = 304.0
+
+[node name="Use" type="LineEdit" parent="CanvasLayer/Control/Inventory" index="4"]
+margin_left = 264.0
+margin_top = 80.0
+margin_right = 568.0
+margin_bottom = 108.0
+custom_fonts/font = SubResource( 8 )
+placeholder_text = "Write the Item Num you want to equip/use (Enter)"
+
+[node name="Remove" type="LineEdit" parent="CanvasLayer/Control/Inventory" index="5"]
+margin_left = 264.0
+margin_top = 128.0
+margin_right = 568.0
+margin_bottom = 156.0
+hint_tooltip = "Removing an item will completely remove"
+custom_fonts/font = SubResource( 8 )
+placeholder_text = "Write the Item Num you want removed (Enter 2x)"
+
+[node name="Move" type="LineEdit" parent="CanvasLayer/Control/Inventory" index="6"]
+margin_left = 264.0
+margin_top = 176.0
+margin_right = 568.0
+margin_bottom = 204.0
+hint_tooltip = "Removing an item will completely remove"
+custom_fonts/font = SubResource( 12 )
+placeholder_text = "Write the Item Num you want moved to the top (Enter)"
+
+[node name="desc" type="RichTextLabel" parent="CanvasLayer/Control/Inventory" index="7"]
+anchor_left = 0.4125
+anchor_top = 0.45
+anchor_right = 0.887
+anchor_bottom = 0.783
+margin_right = 0.32
+margin_bottom = 0.159996
+custom_fonts/normal_font = ExtResource( 21 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Level" type="Control" parent="CanvasLayer/Control" index="13"]
+pause_mode = 2
+visible = false
+anchor_left = 0.037
+anchor_top = 0.05
+anchor_right = 0.962
+anchor_bottom = 0.95
+margin_left = 0.32
+margin_right = 0.319946
+margin_bottom = -3.05176e-05
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BG_full" type="ColorRect" parent="CanvasLayer/Control/Level" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -24.0
+margin_top = -24.0
+margin_right = 24.0001
+margin_bottom = 24.0
+color = Color( 0, 0, 0, 0.313726 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BG" type="ColorRect" parent="CanvasLayer/Control/Level" index="1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -296.0
+margin_top = -216.0
+margin_right = 296.0
+margin_bottom = 216.0
+color = Color( 0.192157, 0.207843, 0.196078, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FG" type="ColorRect" parent="CanvasLayer/Control/Level" index="2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -280.0
+margin_top = -200.0
+margin_right = 280.0
+margin_bottom = 200.0
+color = Color( 0.294118, 0.317647, 0.298039, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Overview" type="RichTextLabel" parent="CanvasLayer/Control/Level" index="3"]
+margin_left = 40.0
+margin_top = 104.0
+margin_right = 304.0
+margin_bottom = 328.0
+custom_fonts/normal_font = ExtResource( 21 )
+bbcode_enabled = true
+bbcode_text = "LEVEL: [color=gray]0[/color]
+
+XP:
+[color=gray]0/100[/color]
+
+SKILLS:
+[color=gray]None :([/color]
+
+Favorite Weapon: [color=green](+10 DMG)[/color]
+[color=gray]None[/color]"
+text = "LEVEL: 0
+
+XP:
+0/100
+
+SKILLS:
+None :(
+
+Favorite Weapon: (+10 DMG)
+None"
+
+[node name="Speed" type="Button" parent="CanvasLayer/Control/Level" index="4"]
+anchor_left = 0.716
+anchor_top = 0.314963
+anchor_right = 0.932
+anchor_bottom = 0.361222
+margin_left = 0.128052
+margin_top = -0.0639954
+margin_right = 0.256042
+margin_bottom = 3.952
+hint_tooltip = "Adds +1.5 speed to Walking
+Removes -0.2 seconds from Special Attack Speed
+
+Adds +15 to Max Stamina
+
+Reaching Level 4 will lower the max level of Strength, 
+stopping you from gaining anymore perks.
+
+MAX LEVEL: 6"
+custom_fonts/font = ExtResource( 21 )
+text = "Speed: 0"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Stength" type="Button" parent="CanvasLayer/Control/Level" index="5"]
+anchor_left = 0.716
+anchor_top = 0.406963
+anchor_right = 0.932
+anchor_bottom = 0.463222
+margin_left = 0.128052
+margin_top = 0.192032
+margin_right = 0.256042
+margin_bottom = -0.111969
+hint_tooltip = "Adds +3 to Weapon Damage
+Removes .15 Speed
+
+Reaching Level 5 will lower the max level of Speed, 
+stopping you from gaining anymore perks.
+
+MAX LEVEL: 8"
+custom_fonts/font = ExtResource( 21 )
+text = "Strength"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Inteligence" type="Button" parent="CanvasLayer/Control/Level" index="6"]
+anchor_left = 0.716
+anchor_top = 0.499963
+anchor_right = 0.932
+anchor_bottom = 0.555222
+margin_left = 0.128052
+margin_top = 0.0161896
+margin_right = 0.256042
+margin_bottom = 0.14418
+hint_tooltip = "Adds +15 XP when XP is gained.
+
+Reaching Level 3 will lower the max level of Resistance, 
+stopping you from gaining anymore skills.
+
+MAX LEVEL: 5"
+custom_fonts/font = ExtResource( 21 )
+text = "Inteligence"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Resistance" type="Button" parent="CanvasLayer/Control/Level" index="7"]
+anchor_left = 0.716
+anchor_top = 0.592963
+anchor_right = 0.932
+anchor_bottom = 0.648222
+margin_left = 0.128052
+margin_top = -0.160126
+margin_right = 0.256042
+margin_bottom = -0.032135
+hint_tooltip = "Reduces 5% of damage per level.
+
+Reaching Level 3 will lower the max level of Inteligence, 
+stopping you from gaining anymore skills.
+
+MAX LEVEL: 5"
+custom_fonts/font = ExtResource( 21 )
+text = "Resistance"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="WeaponSys" type="Spatial" parent="." index="4"]
+script = ExtResource( 5 )
+
+[node name="reset_ld_pos" type="Timer" parent="WeaponSys" index="0" groups=["donothide"]]
+wait_time = 4.0
+
+[node name="Stamina" type="Node" parent="." index="5" groups=["donothide"]]
+script = ExtResource( 11 )
+
+[node name="Timer" type="Timer" parent="Stamina" index="0" groups=["donothide"]]
+wait_time = 5.0
+autostart = true
+
+[node name="fs_1" type="AudioStreamPlayer3D" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.736908, -0.333918 )
+stream = ExtResource( 12 )
+pitch_scale = 0.75
+bus = "Footsteps"
+
+[node name="fs_2" type="AudioStreamPlayer3D" parent="." index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.736908, 0.335596 )
+stream = ExtResource( 13 )
+pitch_scale = 0.75
+bus = "Footsteps"
+
+[node name="LevelSys" type="Node" parent="." index="8" groups=["donothide"]]
+pause_mode = 2
+script = ExtResource( 14 )
+
+[node name="Hurt" type="AudioStreamPlayer" parent="." index="9" groups=["donothide"]]
+stream = ExtResource( 23 )
+bus = "Sound"
+
+[node name="level_up" type="AudioStreamPlayer" parent="." index="10" groups=["donothide"]]
+stream = ExtResource( 25 )
+bus = "Music"
+
+[node name="Heal" type="AudioStreamPlayer" parent="." index="11" groups=["donothide"]]
+stream = ExtResource( 32 )
+bus = "Music"
+
+[node name="Heal2" type="AudioStreamPlayer" parent="." index="12" groups=["donothide"]]
+stream = ExtResource( 33 )
+bus = "Music"
+
+[connection signal="timeout" from="CanvasLayer/Control/Dead/Timer" to="CanvasLayer/Control/Dead" method="_on_Timer_timeout"]
+[connection signal="animation_finished" from="CanvasLayer/Control/TextureRect/AnimationPlayer" to="CanvasLayer/Control/Dead" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="CanvasLayer/Control/Paused/Settings" to="CanvasLayer/Control/Paused/Settings" method="_on_Settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Paused/Controls" to="CanvasLayer/Control/Paused/Controls" method="_on_Controls_pressed"]
+[connection signal="timeout" from="CanvasLayer/Control/Inventory/DTimer" to="CanvasLayer/Control/Inventory" method="_on_Timer_timeout"]
+[connection signal="text_changed" from="CanvasLayer/Control/Inventory/Use" to="CanvasLayer/Control/Inventory" method="_on_Use_text_changed"]
+[connection signal="text_entered" from="CanvasLayer/Control/Inventory/Use" to="CanvasLayer/Control/Inventory" method="_on_Use_text_entered"]
+[connection signal="text_changed" from="CanvasLayer/Control/Inventory/Remove" to="CanvasLayer/Control/Inventory" method="_on_Remove_text_changed"]
+[connection signal="text_entered" from="CanvasLayer/Control/Inventory/Remove" to="CanvasLayer/Control/Inventory" method="_on_Remove_text_entered"]
+[connection signal="text_changed" from="CanvasLayer/Control/Inventory/Move" to="CanvasLayer/Control/Inventory" method="_on_Move_text_changed"]
+[connection signal="text_entered" from="CanvasLayer/Control/Inventory/Move" to="CanvasLayer/Control/Inventory" method="_on_Move_text_entered"]
+[connection signal="button_up" from="CanvasLayer/Control/Level/Speed" to="CanvasLayer/Control/Level" method="_on_Speed_button_up"]
+[connection signal="button_up" from="CanvasLayer/Control/Level/Stength" to="CanvasLayer/Control/Level" method="_on_Stength_button_up"]
+[connection signal="timeout" from="WeaponSys/reset_ld_pos" to="WeaponSys" method="_on_reset_ld_pos_timeout"]
+[connection signal="timeout" from="Stamina/Timer" to="Stamina" method="_on_Timer_timeout"]
+
+[editable path="Head"]

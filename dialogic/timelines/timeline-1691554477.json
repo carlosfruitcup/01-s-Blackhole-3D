@@ -1,0 +1,35 @@
+{
+	"events": [
+		{
+			"call_node": {
+				"arguments": [
+					"1"
+				],
+				"method_name": "dialogue_state",
+				"target_node_path": "Global"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1691554488.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Welcome to Padva.\nRead the rules and you'll have no problems."
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "dialogue_state",
+				"target_node_path": "Global"
+			},
+			"event_id": "dialogic_042"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5",
+		"file": "timeline-1691554477.json",
+		"name": "padva_guards"
+	}
+}

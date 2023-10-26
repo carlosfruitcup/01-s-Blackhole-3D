@@ -1,0 +1,237 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Player/Weapons/Weapon.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Materials/b_Wood.tres" type="Material" id=2]
+[ext_resource path="res://Assets/generic_textures/metal.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sound/swing_dagger_freefire66.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Sound/attack_player_ld_throw.ogg" type="AudioStream" id=5]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Model:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Model:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Swing:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "reload"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Model:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 5.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, -3.56516, 0 ), Vector3( 0, -3.56516, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "swing"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Model:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( -0.104323, 0, 0 ), Vector3( 0.614722, 0, 0 ), Vector3( 0.614722, 0, 0 ), Vector3( -0.104323, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Model:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -90 ), Vector3( 0, 0, -90 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Swing:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hit"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "swing_2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Model:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Model:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1, 1.2, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 0.0490365 ),
+"update": 0,
+"values": [ Vector3( 0, 90, 0 ), Vector3( -55.174, 90, -3.59998e-06 ), Vector3( -55.174, 90, -3.59998e-06 ), Vector3( 71.3843, 90, 5.29667e-06 ), Vector3( 80.366, 90, 0 ), Vector3( 0, 90, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Swing:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.9 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hit"
+} ]
+}
+
+[sub_resource type="SphereShape" id=7]
+
+[node name="Long Dagger" type="Spatial"]
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+weapon_type = "throwable_melee"
+weapon_can_block = true
+weapon_animations = [ "swing", "swing_2" ]
+weapon_location = Vector3( 0.301, -0.281, -0.308 )
+weapon_rotation = Vector3( 0, 90, 0 )
+weapon_range = Vector3( 0, 0, -5 )
+
+[node name="Model" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0 )
+
+[node name="Barrel" type="CSGCylinder" parent="Model"]
+transform = Transform( 0.37, 0, -1.42109e-14, 0, 1, 0, 0, 0, 1, 0, 0.323427, 0 )
+layers = 2
+radius = 0.012
+height = 0.543902
+sides = 4
+cone = true
+material = SubResource( 3 )
+
+[node name="Handle" type="CSGCylinder" parent="Model"]
+layers = 2
+radius = 0.0157025
+height = 0.131031
+sides = 4
+material = ExtResource( 2 )
+
+[node name="Cylinder_rotation_handler" type="Spatial" parent="Model"]
+transform = Transform( 1, 0, 2.5332e-07, 0, 1, 0, 0, 0, 1, 0.000224099, 0.0421863, 0.0340308 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
+anims/RESET = SubResource( 1 )
+anims/reload = SubResource( 5 )
+anims/swing = SubResource( 2 )
+anims/swing_2 = SubResource( 6 )
+
+[node name="Swing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.244
+bus = "Sound"
+
+[node name="Area" type="Area" parent="."]
+collision_layer = 3
+collision_mask = 3
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 7 )
+
+[node name="Throw" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 5 )
+unit_size = 15.0
+bus = "Sound"
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

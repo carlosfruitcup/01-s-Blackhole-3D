@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/alfred_theme.ogg-d75c9efe8817e11d0d46976c83d1a489.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Boss/1/alfred_theme.ogg"
+dest_files=[ "res://.import/alfred_theme.ogg-d75c9efe8817e11d0d46976c83d1a489.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

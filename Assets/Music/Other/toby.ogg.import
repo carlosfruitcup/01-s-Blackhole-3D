@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/toby.ogg-3e183280cb775f322c721c5a91e6bc5d.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Other/toby.ogg"
+dest_files=[ "res://.import/toby.ogg-3e183280cb775f322c721c5a91e6bc5d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

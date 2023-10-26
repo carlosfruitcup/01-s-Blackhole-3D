@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/1b_padva_combat.ogg-1624d6b67abe9020e3ecc451a6241b2f.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/AreaCombat/1/1b_padva_combat.ogg"
+dest_files=[ "res://.import/1b_padva_combat.ogg-1624d6b67abe9020e3ecc451a6241b2f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

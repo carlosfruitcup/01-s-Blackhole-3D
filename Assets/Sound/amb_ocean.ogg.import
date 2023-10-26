@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/amb_ocean.ogg-ad060d8d95e50786f3d9e7b8a604078b.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/amb_ocean.ogg"
+dest_files=[ "res://.import/amb_ocean.ogg-ad060d8d95e50786f3d9e7b8a604078b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

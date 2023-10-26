@@ -1,0 +1,117 @@
+{
+	"files": [
+
+	],
+	"folders": {
+		"Characters": {
+			"files": [
+				"character-1692490460.json",
+				"character-1692206520.json",
+				"character-1691977164.json",
+				"character-1691616040.json",
+				"character-1691602438.json",
+				"character-1691554488.json",
+				"character-1691517122.json",
+				"character-1691459955.json"
+			],
+			"folders": {
+
+			},
+			"metadata": {
+				"color": null,
+				"folded": false
+			}
+		},
+		"Definitions": {
+			"files": [
+				"1692894673-379",
+				"1692891344-343",
+				"1692490364-815",
+				"1691977295-840",
+				"1691617301-550",
+				"1691611384-333",
+				"1691609775-485",
+				"1691605096-508",
+				"1691605045-887"
+			],
+			"folders": {
+
+			},
+			"metadata": {
+				"color": null,
+				"folded": false
+			}
+		},
+		"Themes": {
+			"files": [
+				"theme-1691977202.cfg",
+				"theme-1691616357.cfg",
+				"theme-1691602327.cfg",
+				"theme-1691554779.cfg",
+				"theme-1691458843.cfg",
+				"theme-1691517081.cfg"
+			],
+			"folders": {
+
+			},
+			"metadata": {
+				"color": null,
+				"folded": false
+			}
+		},
+		"Timelines": {
+			"files": [
+				"timeline-1692488218.json",
+				"timeline-1691952124.json",
+				"timeline-1691553612.json",
+				"timeline-1691459792.json",
+				"timeline-1691462691.json"
+			],
+			"folders": {
+				"Area0": {
+					"files": [
+						"timeline-1691460363.json",
+						"timeline-1691616540.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
+					}
+				},
+				"Area1": {
+					"files": [
+						"timeline-1691616988.json",
+						"timeline-1691516880.json",
+						"timeline-1691547755.json",
+						"timeline-1691892740.json",
+						"timeline-1691554477.json",
+						"timeline-1691604498.json",
+						"timeline-1691604963.json",
+						"timeline-1691977288.json",
+						"timeline-1692206543.json",
+						"timeline-1692390167.json",
+						"timeline-1692392045.json",
+						"timeline-1692764915.json",
+						"timeline-1692890894.json",
+						"timeline-1693004702.json",
+						"timeline-1693005019.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
+					}
+				}
+			},
+			"metadata": {
+				"color": null,
+				"folded": false
+			}
+		}
+	}
+}

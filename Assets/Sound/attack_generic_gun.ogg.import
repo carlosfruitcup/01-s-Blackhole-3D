@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/attack_generic_gun.ogg-6fcd73197c4587f03aa5a4895c6928f3.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/attack_generic_gun.ogg"
+dest_files=[ "res://.import/attack_generic_gun.ogg-6fcd73197c4587f03aa5a4895c6928f3.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

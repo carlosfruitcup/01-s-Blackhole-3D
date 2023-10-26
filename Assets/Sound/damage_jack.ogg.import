@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/damage_jack.ogg-ce7feb836132b3c1d6037d89a886f6c4.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/damage_jack.ogg"
+dest_files=[ "res://.import/damage_jack.ogg-ce7feb836132b3c1d6037d89a886f6c4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

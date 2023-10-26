@@ -1,0 +1,21 @@
+{
+	"color": "#ff7b7b7b",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1691517122.json",
+	"mirror_portraits": false,
+	"name": "Salvage",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		}
+	],
+	"scale": 100,
+	"theme": "theme-1691517081.cfg"
+}

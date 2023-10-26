@@ -1,0 +1,41 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 2
+syntax_version = 2
+raw_text = "~ area_beginning
+
+Jack[(You]): Wh...Where am I?
+Jack[(You)]: I need to find Rick!"
+errors = [  ]
+titles = {
+"area_beginning": "2"
+}
+lines = {
+"0": {
+"next_id": "2",
+"text": "area_beginning",
+"type": "title"
+},
+"2": {
+"character": "Jack[(You])",
+"character_replacements": [  ],
+"next_id": "3",
+"replacements": [  ],
+"text": "Wh...Where am I?",
+"translation_key": "Wh...Where am I?",
+"type": "dialogue"
+},
+"3": {
+"character": "Jack[(You)]",
+"character_replacements": [  ],
+"next_id": "",
+"replacements": [  ],
+"text": "I need to find Rick!",
+"translation_key": "I need to find Rick!",
+"type": "dialogue"
+}
+}

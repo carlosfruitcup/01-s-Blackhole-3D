@@ -1,0 +1,21 @@
+{
+	"color": "#ff8cff8e",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1691602438.json",
+	"mirror_portraits": false,
+	"name": "Toby",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		}
+	],
+	"scale": 100,
+	"theme": "theme-1691602327.cfg"
+}

@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/textures/tile/padva_walkway.png" type="Texture" id=1]
+[ext_resource path="res://Assets/textures/tile/dirt.png" type="Texture" id=2]
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=13]
+material = SubResource( 12 )
+size = Vector2( 2, 2 )
+
+[sub_resource type="ConvexPolygonShape" id=11]
+points = PoolVector3Array( 1, 1, 0, 1, -1, 0, -1, 1, 0, -1, -1, 0 )
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_color = Color( 0.65098, 0.65098, 0.65098, 1 )
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=15]
+material = SubResource( 14 )
+size = Vector2( 2, 2 )
+
+[sub_resource type="SpatialMaterial" id=16]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=17]
+material = SubResource( 16 )
+size = Vector2( 2, 2 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="a1" type="MeshInstance" parent="."]
+mesh = SubResource( 13 )
+
+[node name="StaticBody" type="StaticBody" parent="a1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="a1/StaticBody"]
+shape = SubResource( 11 )
+
+[node name="a1_road" type="MeshInstance" parent="."]
+mesh = SubResource( 15 )
+
+[node name="StaticBody" type="StaticBody" parent="a1_road"]
+
+[node name="CollisionShape" type="CollisionShape" parent="a1_road/StaticBody"]
+shape = SubResource( 11 )
+
+[node name="a1_dirt" type="MeshInstance" parent="."]
+mesh = SubResource( 17 )
+
+[node name="StaticBody" type="StaticBody" parent="a1_dirt"]
+
+[node name="CollisionShape" type="CollisionShape" parent="a1_dirt/StaticBody"]
+shape = SubResource( 11 )

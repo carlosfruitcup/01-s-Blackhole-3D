@@ -1,0 +1,7 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Assets/generic_textures/wood.png" type="Texture" id=1]
+
+[resource]
+albedo_color = Color( 0.784314, 0.380392, 0.0862745, 1 )
+albedo_texture = ExtResource( 1 )

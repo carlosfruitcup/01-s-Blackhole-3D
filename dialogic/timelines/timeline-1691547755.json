@@ -1,0 +1,85 @@
+{
+	"events": [
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "stop_track",
+				"target_node_path": "../../MusicManager"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"1"
+				],
+				"method_name": "dialogue_state",
+				"target_node_path": "Global"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"shaking"
+				],
+				"method_name": "play_anim",
+				"target_node_path": "../../Salvage"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1691517122.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "DAMN YOU AND YOUR MOTHER!\nYOU MAY HAVE WON THE BATTLE, BUT YOU WONT NEXT TIME."
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"res://Assets/Music/AreaBG/1/1abackground.ogg"
+				],
+				"method_name": "play_track",
+				"target_node_path": "../../MusicManager"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"shaking_move_back"
+				],
+				"method_name": "play_anim",
+				"target_node_path": "../../Salvage"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "dialogue_state",
+				"target_node_path": "Global"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"1"
+				],
+				"method_name": "set_visible",
+				"target_node_path": "../../SavePoint"
+			},
+			"event_id": "dialogic_042"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5",
+		"file": "timeline-1691547755.json",
+		"name": "salvage_defeat"
+	}
+}

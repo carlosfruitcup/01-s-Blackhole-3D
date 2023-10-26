@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/swing_dagger_freefire66.ogg-07a953e85dc53bb2beac150a49d5cb6e.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/swing_dagger_freefire66.ogg"
+dest_files=[ "res://.import/swing_dagger_freefire66.ogg-07a953e85dc53bb2beac150a49d5cb6e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
