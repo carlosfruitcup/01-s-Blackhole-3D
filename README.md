@@ -7,6 +7,9 @@ I really disliked the result of the game, so one year after release I decided to
 # What are you making it open-source?
 I'm not going to work on this game, so I decided to just release the remake as an open source project.
 
+# How do I access Dialog?
+Download Dialogic
+
 # What can I and cannot do with this game?
 You can do anything with the game, monetize it, rework the entire thing, the only thing I ask of you is to
 1. Add these people to the credits (if you still include their contributions)
