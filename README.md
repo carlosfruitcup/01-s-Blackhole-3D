@@ -13,18 +13,29 @@ Download Dialogic
 # What can I and cannot do with this game?
 You can do anything with the game, monetize it, rework the entire thing, the only thing I ask of you is to
 1. Add these people to the credits (if you still include their contributions)
-  Sounds Used:
-  InspectorJ - freesound.org
-  freefire66 - freesound.org
-  GoodSoundForYou - Soundbible.com
-  zapsplat
-  SamsterBirdies - freesound.org
+
+    Sounds Used:
   
-  Voices:
-  Padva Guards, Toby, Padva Locals, Scafe's Shopkeepers by: Qlouk
+    InspectorJ - freesound.org
+    
+    freefire66 - freesound.org
+    
+    GoodSoundForYou - Soundbible.com
+    
+    zapsplat
+    
+    SamsterBirdies - freesound.org
+    
+    Voices:
+    
+    Padva Guards, Toby, Padva Locals, Scafe's Shopkeepers by: Qlouk
+    
   Other voices by: carlosfruitcup
+
 2. Include me in the credits
+
 3. You may upload the music tracks I made, just please credit me appropriately
+
 4. Just don't be a weirdo
 
 Follow all of these rules and you should be good.
